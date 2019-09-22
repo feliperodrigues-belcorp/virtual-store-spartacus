@@ -43,9 +43,10 @@ if (!environment.production) {
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: [
+           'belcorp-pe',
            'belcorp-cl',
-          'belcorp-pe',
         ],
+         currency : ['PEN','CLP']
       },
 
       // custom routing configuration for e2e testing
