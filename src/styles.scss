@@ -1,1 +1,27 @@
 @import '~@spartacus/styles/index';
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+:root {
+  --cx-color-primary: #FFFFFF;
+  --cs-color-secundary: #000000;
+  --cx-color-success: #409F2D;
+  --cx-color-danger: #db0002;
+  --cx-color-warning: #ffc107;
+  --cx-color-info: #1490A8;
+  --cx-color-light: #F5F5F5;
+  --cx-color-dark: #000000;
+  --cx-color-background: #FFFFFF;
+  --cx-color-text: #000000;
+  --cx-color-gray: #979797;
+  --cx-color-orange: #FF9900;
+  --cx-color-magenta: #B9007E;
+  --cx-color-light-gray:#D1D5DB;
+}
+
+body {
+  font-family:'Lato', sans-serif;
+}
+
+
+
