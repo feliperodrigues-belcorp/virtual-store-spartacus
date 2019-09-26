@@ -3,7 +3,6 @@
 
 
 :root {
-  --cx-color-primary: #FFFFFF;
   --cs-color-secundary: #000000;
   --cx-color-success: #409F2D;
   --cx-color-danger: #db0002;
@@ -16,12 +15,9 @@
   --cx-color-gray: #979797;
   --cx-color-orange: #FF9900;
   --cx-color-magenta: #B9007E;
-  --cx-color-light-gray:#D1D5DB;
+  --cx-color-light-gray: #D1D5DB;
 }
 
 body {
-  font-family:'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
-
-
-
