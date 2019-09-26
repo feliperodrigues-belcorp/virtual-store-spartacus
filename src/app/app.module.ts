@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
       backend: {
         occ: {
           baseUrl: 'https://localhost:9002',
-          prefix: '/rest/v2/',
+          prefix: '/restbelcorp/v2/',
           legacy: false,
         },
       },
