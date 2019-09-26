@@ -11,8 +11,8 @@ import { AppComponent } from './app.component';
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://localhost:9002',
-          prefix: '/rest/v2/',
+          baseUrl: 'https://keyrusbelcorp.com',
+          prefix: '/restbelcorp/v2/',
           legacy: false,
         },
       },
