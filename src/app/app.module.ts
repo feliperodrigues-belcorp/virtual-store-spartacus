@@ -20,13 +20,10 @@ import { AppComponent } from './app.component';
         client_id: 'mobile_android',
         client_secret: 'secret',
       },
-     context: {
+      context: {
         urlParameters: ['baseSite', 'language', 'currency'],
-        baseSite: [
-           'belcorp-pe',
-          'belcorp-cl',
-        ],
-         currency : ['PEN','CLP']
+        baseSite: ['belcorp-pe', 'belcorp-cl'],
+        currency: ['PEN', 'CLP'],
       },
       i18n: {
         resources: translations,
