@@ -3,9 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterAccountComponent } from './register-account/register-account.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent, RegisterAccountComponent],
   imports: [
     BrowserModule,
     B2cStorefrontModule.withConfig({
@@ -20,13 +23,13 @@ import { AppComponent } from './app.component';
         client_id: 'mobile_android',
         client_secret: 'secret',
       },
-     context: {
+      context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: [
-           'belcorp-pe',
+          'belcorp-pe',
           'belcorp-cl',
         ],
-         currency : ['PEN','CLP']
+        currency: ['PEN', 'CLP']
       },
       i18n: {
         resources: translations,
@@ -38,4 +41,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+
+export class AppModule { }
