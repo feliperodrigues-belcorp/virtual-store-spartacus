@@ -5,7 +5,9 @@
 
 $white: #ffff!default;
 :root {
+
   --cx-color-white: #FFFFFF;
+
   --cs-color-secundary: #000000;
   --cx-color-success: #409F2D;
   --cx-color-danger: #db0002;
@@ -18,10 +20,11 @@ $white: #ffff!default;
   --cx-color-gray: #979797;
   --cx-color-orange: #FF9900;
   --cx-color-magenta: #B9007E;
-  --cx-color-light-gray:#D1D5DB;
+  --cx-color-light-gray: #D1D5DB;
 }
 
 body {
+
   font-family:'Lato', sans-serif;
   background: var(--cx-color-light);
   
@@ -29,7 +32,6 @@ body {
     background: var(--cx-color-white);
          
   }
+
+
 }
-
-
-

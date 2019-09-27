@@ -15,7 +15,7 @@ import { RegisterAccountComponent } from './register-account/register-account.co
       backend: {
         occ: {
           baseUrl: 'https://localhost:9002',
-          prefix: '/rest/v2/',
+          prefix: '/belcorpws/v2/',
           legacy: false,
         },
       },
@@ -25,11 +25,13 @@ import { RegisterAccountComponent } from './register-account/register-account.co
       },
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
+
         baseSite: [
           'belcorp-pe',
           'belcorp-cl',
         ],
         currency: ['PEN', 'CLP']
+
       },
       i18n: {
         resources: translations,
