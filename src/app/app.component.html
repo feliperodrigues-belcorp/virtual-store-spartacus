@@ -1,5 +1,18 @@
 <cx-storefront></cx-storefront>
 
+
+<ng-template cxOutletRef="BreadcrumbComponent">
+</ng-template>
+
+<ng-template cxOutletRef="LoginPageTemplate">
+  <app-login></app-login>
+</ng-template>
+
+<ng-template cxOutletRef="AccountPageTemplate">
+  <app-register-account></app-register-account>
+</ng-template>
+
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
   {{product.product.brand}}BrandHere
 </ng-template>
+

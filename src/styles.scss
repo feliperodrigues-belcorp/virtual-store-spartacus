@@ -1,8 +1,13 @@
 @import '~@spartacus/styles/index';
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import './app/app.component.scss';
 
 
+$white: #ffff!default;
 :root {
+
+  --cx-color-white: #FFFFFF;
+
   --cs-color-secundary: #000000;
   --cx-color-success: #409F2D;
   --cx-color-danger: #db0002;
@@ -19,5 +24,14 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+
+  font-family:'Lato', sans-serif;
+  background: var(--cx-color-light);
+  
+  @media screen and (max-width: 991px) {
+    background: var(--cx-color-white);
+         
+  }
+
+
 }
