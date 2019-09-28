@@ -968,31 +968,31 @@
     semver "6.3.0"
     semver-intersect "1.4.0"
 
-"@spartacus/assets@~1.0.0":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@spartacus/assets/-/assets-1.0.4.tgz#d9ed4a12f2767a2670fa9f0cedb2b98b44d5b672"
-  integrity sha512-X0zeEKE903r3TpqHXovp4zGkrcGic5ql9elFyENszHF86BW2omEcCVeEnSE+uIeKu/9NaUgTLjJb7dtrzoEISw==
+"@spartacus/assets@~1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@spartacus/assets/-/assets-1.1.1.tgz#38d2e47a2824d3a0b227e49b562d5c99589559d4"
+  integrity sha512-S4QctmZfotG3N918SiqBGUqLVReTL1Fmcq7Jx8+reFKdbE23KZakkYNP52/TFyV64rwDW1x753oExVgPduu9JQ==
   dependencies:
     tslib "^1.9.0"
 
-"@spartacus/core@~1.0.0":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@spartacus/core/-/core-1.0.4.tgz#aad6160bff5c7198dc4ea5d349ba7d7742c684ec"
-  integrity sha512-R4OjPGthgiBUjtny3kte/tWecg34mtn9ZA//WEsB7QEw2ububnZ7xAvOM/t/Fs3QaQHT/B8HlOJpq54qIVMmrA==
+"@spartacus/core@~1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@spartacus/core/-/core-1.1.1.tgz#a39171d56280fdeb435114a5d93752b51665347b"
+  integrity sha512-fUAVpfsGuHTtpnMGvgC40C7cNL5tDPZlHsHgxNhYQkslg2ijaYyI1JNO0dn34AxcBSKGtDYRYUSu+hQDc0DTZQ==
   dependencies:
     tslib "^1.9.0"
 
-"@spartacus/storefront@~1.0.0":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@spartacus/storefront/-/storefront-1.0.4.tgz#7217cd00d9e0604433996f1b8a5ac2075755f544"
-  integrity sha512-FvqxOMw7mD/Fub6EVktkO1i5BULStSsP25jvEsWcKMLB+MbKSPkGWLigvMVr5lNO+mJGS0g35GX4otB9gJaD5w==
+"@spartacus/storefront@~1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@spartacus/storefront/-/storefront-1.1.1.tgz#6a62d4a98b7809dc284507023af076919a7f200a"
+  integrity sha512-nheJ6n+nQUGySo0IdEwvkPVs2hN7zLcLYJdFgJbvu5TnNaiE07Dm2Zb9x4fnL5kIjk5pSsmNG29DtlNWF9wQkA==
   dependencies:
     tslib "^1.9.0"
 
-"@spartacus/styles@~1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@spartacus/styles/-/styles-1.0.2.tgz#c6c59393d51e84d8724272e8217ab2fa9e385edc"
-  integrity sha512-kXtueyovJkloEho/f9ieWSM8gU8MA6Cv4IumuMhi/Y7dn1Iwt4lTaNtGTq9+JkZBzC8N2avCJ/mkIarsSkKMDA==
+"@spartacus/styles@~1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@spartacus/styles/-/styles-1.1.1.tgz#313ac5acba98f46f73ca48a3e68652bcf10a27eb"
+  integrity sha512-ZbgsWG6FV/cjJkJt2GHK7GiYWmydgmVnr76RtjgcqyeUlr7lP4MJUgASCVcnIsPl3vCeqWqGUBuFOr/+omOwHw==
   dependencies:
     hamburgers "^1.1.3"
 

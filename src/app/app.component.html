@@ -1,18 +1,20 @@
 <cx-storefront></cx-storefront>
 
+<ng-template cxOutletRef="ReturningCustomerLoginComponent" cxOutletPos="replace">
+  <app-belcorp-login-form></app-belcorp-login-form>
+</ng-template>
 
-<ng-template cxOutletRef="BreadcrumbComponent">
+<ng-template cxOutletRef="RegisterCustomerComponent" cxOutletPos="replace">
+  <app-belcorp-register></app-belcorp-register>
+</ng-template>
+
+<!-- <ng-template cxOutletRef="BreadcrumbComponent">
 </ng-template>
 
 <ng-template cxOutletRef="LoginPageTemplate">
   <app-login></app-login>
 </ng-template>
 
-<ng-template cxOutletRef="AccountPageTemplate">
-  <app-register-account></app-register-account>
-</ng-template>
-
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
   {{product.product.brand}}BrandHere
-</ng-template>
-
+</ng-template> -->
