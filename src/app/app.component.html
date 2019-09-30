@@ -18,4 +18,9 @@
     <div>{{item.description}}</div>
     <img [src]="item.url" />
   </div>
+
+  <div *ngFor="let item of product.product.descubreMas">
+    <div>{{item.title}}</div>
+    <div>{{item.description}}</div>
+  </div>
 </ng-template>
