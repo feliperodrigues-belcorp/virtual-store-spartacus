@@ -4,10 +4,13 @@
 
 
 $white: #ffff!default;
+$gray-light:#C8C8C8!default;
+$gray-color:#808080!default;
+
+
 :root {
 
   --cx-color-white: #FFFFFF;
-
   --cs-color-secundary: #000000;
   --cx-color-success: #409F2D;
   --cx-color-danger: #db0002;
@@ -22,6 +25,7 @@ $white: #ffff!default;
   --cx-color-magenta: #B9007E;
   --cx-color-light-gray: #D1D5DB;
 }
+
 
 body {
 

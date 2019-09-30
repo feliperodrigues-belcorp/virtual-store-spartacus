@@ -1,43 +1,90 @@
 .cx-page-slot {
-  padding: 0px;
+  padding: 0;
 }
 
 app-belcorp-register {
-  max-width: 100%;
+  max-width: 62rem;
+
 }
 
 .cx-register {
   &__session {
     background: var(--cx-color-white);
-    padding: 40px 160px 40px 160px;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.88rem;
+    max-width: 41rem;
+
+    @media screen and (max-width: 1200px) {
+      max-width: 37.5rem;
+    }
+
+    @media screen and (max-width: 991px) {
+      display: block;
+      max-width: 100%;
+    }
 
     p {
-      font-size: 12px;
+      font-size: 0.75rem;
       color: #808080;
       font-weight: normal;
-      line-height: 14px;
+      line-height: 0.875rem;
     }
 
     h1 {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: bold;
-      line-height: 24px;
+      line-height: 1.5rem;
     }
 
+    &--term {height: 1rem;
+      width: 1rem;
+      border-color: black!important;
+      border-width: 0.0625rem!important;
+      border-radius: 0.125rem!important;
+   
+    }
+
+    &--term-link {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.625rem;
+      line-height: 0.75rem;
+      color: var(--cx-color-text);
+      padding-left: 0.4375rem;
+
+         a {
+           color: var(--cx-color-text);
+           font-weight: bold;
+           text-decoration: underline;
+         }
+    }
+
+    &--box {
+      width: 25.625rem;
+      padding: 2rem;         
+        @media screen and (max-width: 991px) {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
     &--input {
-      border: 0px;
-      border-bottom: 2px solid #C8C8C8;
-      border-radius: 0px;
-      margin-top: 20px;
-      padding-left: 3px;
-      font-size: 12px;
-      color: #979797;
+      border: 0;
+      border-bottom: 0.0625rem solid var(--cx-color-gray);
+      border-radius: 0;
+      margin-top: 1.25rem;
+      padding-left: 0.1875rem;
+      font-size: 0.75rem;
+      color: var(--cx-color-gray);
     }
 
     &--contrasena {
       cursor: pointer;
-      color: #000000;
+      color: var(--cx-color-text);
 
     }
 
@@ -45,89 +92,121 @@ app-belcorp-register {
       margin: 0px;
 
       &-text {
-        padding-left: 10px;
-        color: #000000;
-        font-size: 12px;
+        padding-left: 0.625rem;
+        color: var(--cx-color-text);
+        font-size: 0.75rem;
       }
 
       input[type=radio]:checked {
-        border-color: #000000 !important;
+        border-color: var(--cx-color-text) !important;
       }
 
       input[type=radio]:checked::after {
-        background-color: #000000;
+        background-color: var(--cx-color-text);
       }
     }
 
-    .cx-register__session--btn {
+    &--btn {
       background: #C8C8C8;
-      color: #979797;
-      font-size: 12px;
-      line-height: 14px;
+      color: var(--cx-color-gray);
+      font-size: 0.75rem;
+      line-height: 0.875rem;
       font-weight: bold;
       text-align: center;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
       width: 100%;
-      border-radius: 2px;
+      border-radius: 0.125rem;
+      cursor: pointer;
+
+      &:hover { 
+        background:var(--cx-color-text);
+        color: var(--cx-color-white);
+        }
+     }
+    button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+      background: var(--cx-color-text);
+      color: var(--cx-color-white);
+
     }
 
     @media screen and (max-width: 991px) {
-      padding: 0px;
+      padding: 0;
     }
 
     @media screen and (max-width: 576px) {
-      padding: 10px;
+      padding: 0.625rem;
     }
   }
 
   .cx-register__ingresar {
     background: var(--cx-color-white);
-    margin-top: 30px;
-    margin-left: 30px;
-    width: auto;
+    margin-top: 1.875rem;
+    margin-left: 1rem;
+    max-width: 20rem;
     height: 100%;
 
+    @media screen and (max-width: 991px) {
+     display: none;
+    }
     h1 {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: bold;
-      line-height: 20px;
+      line-height: 1.25rem;
       color: var(--cx-color-text);
-      padding-top: 22px;
+      padding-top: 1.375rem;
     }
 
-    .cx-register__ingresar-btn {
+     &--btn {
       background: var(--cx-color-white);
-      margin-top: 15px;
+      margin-top: 0.9375rem;
       color: var(--cx-color-text);
-      border: 1px solid #000000;
-      font-size: 12px;
-      line-height: 14px;
+      border: 0.0625rem solid var(--cx-color-text);
+      font-size: 0.75rem;
+      line-height: 0.875rem;
       font-weight: bold;
       text-align: center;
-      letter-spacing: 1px;
+      letter-spacing: 0.0625rem;
       width: 100%;
-      border-radius: 2px;
-      margin-bottom: 20px;
-    }
+      border-radius: 0.125rem;
+      margin-bottom: 1.25rem;
+      &:hover { 
+        background: var(--cx-color-text);
+        color: var(--cx-color-white);
+        }   
+     }
 
     @media screen and (max-width: 991px) {
-      margin-left: 0px;
-      padding: 0px;
+      margin-left: 0;
+      padding: 0;
       width: 100%;
 
       .container {
-        padding: 0px;
+        padding: 0;
       }
 
     }
 
     @media screen and (max-width: 576px) {
-      padding: 10px;
+      padding: 0.625rem;
     }
+
+  
   }
 
   .form-control:focus {
     background-color: var(--cx-color-white);
   }
 
+}
+.cx-page-section {
+  padding: 0;
+}
+
+input[type=checkbox]:checked {
+  background-color: --cx-color-text!important;
+}
+
+input[type=checkbox]:checked::after {
+  top:0.1875rem;
+  left: 0.1875rem;
 }
