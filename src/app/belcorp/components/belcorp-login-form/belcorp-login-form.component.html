@@ -1,67 +1,65 @@
 <div class="container cx-login">
   <div class="row">
-    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 cx-login__sesion">
-      <p>Proceso de pago</p>
-      <h1>Inicia sesión</h1>
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 cx-login__sesion">
+      <div class="cx-login__sesion--box">
+        <p>Proceso de pago</p>
+        <h1>Inicia sesión</h1>
 
-      <form (submit)="login()" [formGroup]="form">
-        <div class="form-group">
-          <label>
-            <span class="label-content">{{ 'loginForm.emailAddress.label' | cxTranslate }}</span>
-            <input type="email" class="form-control cx-login__sesion--input" [class.is-invalid]="
-          form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)
-        " formControlName="userId" placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}" />
-          </label>
-          <div class="invalid-feedback"
-            *ngIf="form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)">
-            <span>{{ 'loginForm.wrongEmailFormat' | cxTranslate }}</span>
+        <form (submit)="login()" [formGroup]="form">
+          <div class="form-group">
+            <label>
+              <input type="email" class="form-control cx-login__sesion--input" [class.is-invalid]="
+              form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)
+            " formControlName="userId" placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}" />
+            </label>
+            <div class="invalid-feedback"
+              *ngIf="form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)">
+              <span>{{ 'loginForm.wrongEmailFormat' | cxTranslate }}</span>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label>
-            <span class="label-content">{{ 'loginForm.password.label' | cxTranslate }}</span>
-            <input type="password" class="form-control form-control cx-login__sesion--input"
-              placeholder="{{ 'loginForm.password.placeholder' | cxTranslate }}" formControlName="password" />
-          </label>
-        </div>
-        <p>
-          <a [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl" aria-controls="reset-password" class="btn-link">{{
-      'loginForm.forgotPassword' | cxTranslate
-    }}</a>
-        </p>
+          <div class="form-group">
+            <label>
+              <input type="password" class="form-control form-control cx-login__sesion--input"
+                placeholder="{{ 'loginForm.password.placeholder' | cxTranslate }}" formControlName="password" />
+            </label>
+          </div>
+          <p class="cx-login__sesion--reset">
+            <a [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl" aria-controls="reset-password">
+              <u>¿Olvidaste tu contraseña?</u>
+            </a>
+          </p>
 
-        <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid">
-          {{ 'loginForm.signIn' | cxTranslate }}
-        </button>
-      </form>
+          <button type="submit" class="btn btn-block cx-login__sesion--btn" [disabled]="form.invalid">
+            Iniciar sesión
+          </button>
+        </form>
+      </div>
     </div>
     <div class="col-lg-4 col-md-12 cx-login__registrarme">
-      <div class="container">
-        <h1> ¿No tienes cuenta? Regístrate y podrás: </h1>
-        <div class="cx-login__registrarme--info">
-          <p>
-            <i class="fas fa-check-circle"></i> Notificarte sobre los estados de compra
-          </p>
-          <p>
-            <i class="fas fa-check-circle"></i> Finalizar tus pedidos más rápido
-          </p>
-          <p>
-            <i class="fas fa-check-circle"></i> Consultar tu historial de pedidos
-          </p>
-        </div>
+      <h1> ¿No tienes cuenta? Regístrate y podrás: </h1>
+      <div class="cx-login__registrarme--info">
+        <p>
+          <i class="fas fa-check-circle"></i> Notificarte sobre los estados de compra
+        </p>
+        <p>
+          <i class="fas fa-check-circle"></i> Finalizar tus pedidos más rápido
+        </p>
+        <p>
+          <i class="fas fa-check-circle"></i> Consultar tu historial de pedidos
+        </p>
+      </div>
 
-        <ng-container *ngIf="!loginAsGuest">
-          <button [routerLink]="{ cxRoute: 'register' } | cxUrl" class="btn cx-login__registrarme--btn">{{
+      <ng-container *ngIf="!loginAsGuest">
+        <button [routerLink]="{ cxRoute: 'register' } | cxUrl" class="btn cx-login__registrarme--btn">{{
             'loginForm.register' | cxTranslate
           }}</button>
-        </ng-container>
+      </ng-container>
 
-        <ng-container *ngIf="loginAsGuest">
-          <button [routerLink]="{ cxRoute: 'checkoutLogin' } | cxUrl" class="btn  cx-login__registrarme--btn">{{
+      <ng-container *ngIf="loginAsGuest">
+        <button [routerLink]="{ cxRoute: 'checkoutLogin' } | cxUrl" class="btn  cx-login__registrarme--btn">{{
             'loginForm.guestCheckout' | cxTranslate
           }}</button>
-        </ng-container>
-      </div>
+      </ng-container>
     </div>
   </div>
 </div>
