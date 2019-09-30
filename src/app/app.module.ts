@@ -24,7 +24,7 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://localhost:9002',
+          baseUrl: 'https://keyrusbelcorp.com',
           prefix: '/belcorpws/v2/',
           legacy: false,
         },
