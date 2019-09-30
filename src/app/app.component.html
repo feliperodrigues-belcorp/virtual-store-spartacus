@@ -8,13 +8,14 @@
   <app-belcorp-register></app-belcorp-register>
 </ng-template>
 
-<!-- <ng-template cxOutletRef="BreadcrumbComponent">
-</ng-template>
-
-<ng-template cxOutletRef="LoginPageTemplate">
-  <app-login></app-login>
+<ng-template cxOutletRef="BreadcrumbComponent">
 </ng-template>
 
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
-  {{product.product.brand}}BrandHere
-</ng-template> -->
+  {{product.product.brand}}
+  <div *ngFor="let item of product.product.tips">
+    <div>{{item.title}}</div>
+    <div>{{item.description}}</div>
+    <img [src]="item.url" />
+  </div>
+</ng-template>
