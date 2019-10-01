@@ -1,2 +1,6 @@
 @import './belcorp/components/belcorp-login-form/belcorp-login-form.component.scss';
 @import './belcorp/components/belcorp-register/belcorp-register.component.scss';
+
+mat-form-field {
+  width: 100%;
+}
