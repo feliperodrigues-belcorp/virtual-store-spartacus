@@ -22,7 +22,7 @@
       color: #808080;
       font-weight: normal;
       line-height: 0.875rem;
-     
+
     }
 
     a {
@@ -40,15 +40,16 @@
 
     &--box {
       width: 25.625rem;
-      padding: 2rem;         
-        @media screen and (max-width: 991px) {
-          width: 100%;
-          padding: 0;
-        }
+      padding: 2rem;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+        padding: 0;
       }
+    }
 
 
-    
+
 
     &--input {
       border: 0;
@@ -79,13 +80,17 @@
       width: 100%;
       border-radius: 0.125rem;
       cursor: pointer;
-      
-      &:hover { 
-        background:var(--cx-color-text);
+
+      &:hover {
+        background: var(--cx-color-text);
         color: var(--cx-color-white);
-        }
-     }
-    button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+      }
+    }
+
+    button:not(:disabled),
+    [type=button]:not(:disabled),
+    [type=reset]:not(:disabled),
+    [type=submit]:not(:disabled) {
       background: var(--cx-color-text);
       color: var(--cx-color-white);
 
@@ -132,11 +137,11 @@
 
       p {
         margin: 0;
-        padding-bottom: 0.3125rem; 
+        padding-bottom: 0.3125rem;
       }
 
       i {
-        color:var(--cx-color-success);
+        color: var(--cx-color-success);
       }
 
     }
@@ -153,13 +158,14 @@
       width: 100%;
       border-radius: 0.125rem;
       margin-bottom: 1.25rem;
-      &:hover { 
+
+      &:hover {
         background: var(--cx-color-text);
         color: var(--cx-color-white);
-        }   
-     }
+      }
+    }
 
-     @media screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) {
       margin-left: 0;
       padding: 0;
       width: 100%;
@@ -174,7 +180,7 @@
       padding: 0.625rem;
     }
 
-  
+
   }
 
   .form-control:focus {
@@ -186,6 +192,7 @@ app-belcorp-login-form {
   max-width: 62rem;
 }
 
-.AccountPageTemplate cx-page-slot, .LoginPageTemplate cx-page-slot {
+.AccountPageTemplate cx-page-slot,
+.LoginPageTemplate cx-page-slot {
   padding: 0;
 }

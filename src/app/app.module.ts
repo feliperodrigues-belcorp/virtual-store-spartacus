@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { I18nModule, UrlModule } from '@spartacus/core';
@@ -8,7 +10,6 @@ import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
-
 @NgModule({
   declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent],
   imports: [
@@ -20,6 +21,10 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
     SpinnerModule,
     BrowserModule.withServerTransition({ appId: 'spartacus-app' }),
     BrowserTransferStateModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
 
     B2cStorefrontModule.withConfig({
       backend: {
@@ -63,6 +68,8 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
         },
       },
     }),
+
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
 })

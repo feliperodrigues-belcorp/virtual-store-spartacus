@@ -18,34 +18,40 @@
 
             <div class="form-group">
               <label>
-                <input class="form-control cx-register__session--input" type="text" name="firstname"
-                  placeholder="Nombre" formControlName="firstName" />
+                <mat-form-field>
+                  <input matInput type="text" name="firstname" placeholder="Nombre" formControlName="firstName" />
+                </mat-form-field>
               </label>
             </div>
 
             <div class="form-group">
               <label>
-                <input class="form-control cx-register__session--input" type="text" name="lastname"
-                  placeholder="Apellido" formControlName="lastName" />
+                <mat-form-field>
+                  <input matInput type="text" name="lastname" placeholder="Apellido" formControlName="lastName" />
+                </mat-form-field>
               </label>
             </div>
 
             <div class="form-group">
               <label>
-                <input class="form-control cx-register__session--input" [class.is-invalid]="
+                <mat-form-field>
+                  <input matInput [class.is-invalid]="
                       userRegistrationForm.get('email').errors &&
                       (userRegistrationForm.get('email').errors['email'] ||
                         userRegistrationForm.get('email').errors['InvalidEmail']) &&
                       userRegistrationForm.get('email').dirty
                     " type="email" name="email" placeholder="Correo electrónico" formControlName="email" />
+                </mat-form-field>
               </label>
             </div>
 
             <div class="form-group">
               <label>
-                <input class="form-control cx-register__session--input" [class.is-invalid]="
+                <mat-form-field>
+                  <input matInput [class.is-invalid]="
                       userRegistrationForm.get('password').invalid && userRegistrationForm.get('password').dirty
                     " type="password" name="password" placeholder="Contraseña" formControlName="password" />
+                </mat-form-field>
                 <div class="invalid-feedback"
                   *ngIf="userRegistrationForm.get('password').invalid && userRegistrationForm.get('password').dirty">
                   <span>{{ 'register.passwordMinRequirements' | cxTranslate }}</span>
@@ -55,10 +61,12 @@
 
             <div class="form-group">
               <label>
-                <input class="form-control cx-register__session--input" [class.is-invalid]="
+                <mat-form-field>
+                  <input matInput [class.is-invalid]="
                       userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value
                     " type="password" name="confirmpassword" placeholder="Confirmar contraseña"
-                  formControlName="passwordconf" />
+                    formControlName="passwordconf" />
+                </mat-form-field>
                 <div class="invalid-feedback" *ngIf="
                       userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value &&
                       userRegistrationForm.get('passwordconf').value
