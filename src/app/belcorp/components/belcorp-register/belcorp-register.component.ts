@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { AuthRedirectService, AuthService, GlobalMessageService, UserService } from '@spartacus/core';
 import { RegisterComponent } from '@spartacus/storefront';
 import { BelcorpUserSignUp } from '../../core/src/model/belcorp.misc.model';
+import { CustomFormValidators } from '../../utils/validators/custom-form-validators';
 
 @Component({
   selector: 'app-belcorp-register',
@@ -10,6 +11,25 @@ import { BelcorpUserSignUp } from '../../core/src/model/belcorp.misc.model';
   styleUrls: ['./belcorp-register.component.scss'],
 })
 export class BelcorpRegisterComponent extends RegisterComponent {
+  userRegistrationForm: FormGroup = this.fb.group(
+    {
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', [Validators.required, CustomFormValidators.emailValidator]],
+      password: [
+        '',
+        [Validators.required, CustomFormValidators.passwordValidator],
+      ],
+      passwordconf: ['', Validators.required],
+      newsletter: [false],
+      termsandconditions: [false, Validators.requiredTrue],
+    },
+    { validator: CustomFormValidators.matchPassword }
+  );
+
+
+
   constructor(
     auth: AuthService,
     authRedirectService: AuthRedirectService,
@@ -26,7 +46,7 @@ export class BelcorpRegisterComponent extends RegisterComponent {
 
   // DATA TO BE SEND
   collectDataFromRegisterForm(formData: any): BelcorpUserSignUp {
-    const { firstName, lastName, email, password, titleCode, termsandconditions } = formData;
+    const { firstName, lastName, email, password, titleCode, phone, termsandconditions } = formData;
 
     return {
       firstName,
@@ -35,6 +55,7 @@ export class BelcorpRegisterComponent extends RegisterComponent {
       password,
       titleCode,
       termsandconditions,
+      phone
     };
   }
 }
