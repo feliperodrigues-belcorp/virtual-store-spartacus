@@ -2,63 +2,71 @@
   <div class="row">
     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 cx-login__sesion">
       <div class="cx-login__sesion--box">
-        <p>Proceso de pago</p>
-        <h1>Inicia sesión</h1>
+        <p>{{ 'loginForm.pago' | cxTranslate }}</p>
+        <h1>{{ 'loginForm.signIn' | cxTranslate }}</h1>
 
         <form (submit)="login()" [formGroup]="form">
           <div class="form-group">
             <label>
-              <input type="email" class="form-control cx-login__sesion--input" [class.is-invalid]="
-              form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)
-            " formControlName="userId" placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}" />
+              <input
+                type="email"
+                class="form-control cx-login__sesion--input"
+                [class.is-invalid]="
+                  form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)
+                "
+                formControlName="userId"
+                placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}"
+              />
             </label>
-            <div class="invalid-feedback"
-              *ngIf="form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)">
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)
+              "
+            >
               <span>{{ 'loginForm.wrongEmailFormat' | cxTranslate }}</span>
             </div>
           </div>
           <div class="form-group">
             <label>
-              <input type="password" class="form-control form-control cx-login__sesion--input"
-                placeholder="{{ 'loginForm.password.placeholder' | cxTranslate }}" formControlName="password" />
+              <input
+                type="password"
+                class="form-control form-control cx-login__sesion--input"
+                placeholder="{{ 'loginForm.password.placeholder' | cxTranslate }}"
+                formControlName="password"
+              />
             </label>
           </div>
           <p class="cx-login__sesion--reset">
             <a [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl" aria-controls="reset-password">
-              <u>¿Olvidaste tu contraseña?</u>
+              <u>{{ 'loginForm.forgotPassword' | cxTranslate }}</u>
             </a>
           </p>
 
           <button type="submit" class="btn btn-block cx-login__sesion--btn" [disabled]="form.invalid">
-            Iniciar sesión
+            {{ 'loginForm.signIn' | cxTranslate }}
           </button>
         </form>
       </div>
     </div>
     <div class="col-lg-4 col-md-12 cx-login__registrarme">
-      <h1> ¿No tienes cuenta? Regístrate y podrás: </h1>
+      <h1>{{ 'loginForm.noAccount.register' | cxTranslate }}</h1>
       <div class="cx-login__registrarme--info">
-        <p>
-          <i class="fas fa-check-circle"></i> Notificarte sobre los estados de compra
-        </p>
-        <p>
-          <i class="fas fa-check-circle"></i> Finalizar tus pedidos más rápido
-        </p>
-        <p>
-          <i class="fas fa-check-circle"></i> Consultar tu historial de pedidos
-        </p>
+        <p><i class="fas fa-check-circle"></i> {{ 'loginForm.noAccount.notify' | cxTranslate }}</p>
+        <p><i class="fas fa-check-circle"></i> {{ 'loginForm.noAccount.finish' | cxTranslate }}</p>
+        <p><i class="fas fa-check-circle"></i> {{ 'loginForm.noAccount.consult' | cxTranslate }}</p>
       </div>
 
       <ng-container *ngIf="!loginAsGuest">
-        <button [routerLink]="{ cxRoute: 'register' } | cxUrl" class="btn cx-login__registrarme--btn">{{
-            'loginForm.register' | cxTranslate
-          }}</button>
+        <button [routerLink]="{ cxRoute: 'register' } | cxUrl" class="btn cx-login__registrarme--btn">
+          {{ 'loginForm.register' | cxTranslate }}
+        </button>
       </ng-container>
 
       <ng-container *ngIf="loginAsGuest">
-        <button [routerLink]="{ cxRoute: 'checkoutLogin' } | cxUrl" class="btn  cx-login__registrarme--btn">{{
-            'loginForm.guestCheckout' | cxTranslate
-          }}</button>
+        <button [routerLink]="{ cxRoute: 'checkoutLogin' } | cxUrl" class="btn  cx-login__registrarme--btn">
+          {{ 'loginForm.guestCheckout' | cxTranslate }}
+        </button>
       </ng-container>
     </div>
   </div>

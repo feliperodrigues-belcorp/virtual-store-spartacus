@@ -47,6 +47,9 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
       },
       // we bring in static translations to be up and running soon right away
       i18n: {
+        backend: {
+          loadPath: '../assets/i18n-assets/{{lng}}//{{ns}}.json',
+        },
         resources: translations,
         chunks: translationChunksConfig,
         fallbackLang: 'en',
