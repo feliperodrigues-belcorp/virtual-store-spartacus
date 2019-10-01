@@ -23,8 +23,12 @@ app-belcorp-register {
 
     @media screen and (max-width: 991px) {
       display: block;
-      max-width: 100%;
+      max-width: 100%; 
+
+       
     }
+
+   
 
     p {
       font-size: 0.75rem;
@@ -37,6 +41,7 @@ app-belcorp-register {
       font-size: 1.25rem;
       font-weight: bold;
       line-height: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     &--term {height: 1rem;
@@ -74,10 +79,6 @@ app-belcorp-register {
 
     &--input {
       border: 0;
-      border-bottom: 0.0625rem solid var(--cx-color-gray);
-      border-radius: 0;
-      margin-top: 1.25rem;
-      padding-left: 0.1875rem;
       font-size: 0.75rem;
       color: var(--cx-color-gray);
     }
@@ -203,10 +204,16 @@ app-belcorp-register {
 }
 
 input[type=checkbox]:checked {
-  background-color: --cx-color-text!important;
+  background-color:var(--cx-color-text)!important;
 }
 
 input[type=checkbox]:checked::after {
   top:0.1875rem;
   left: 0.1875rem;
+}
+
+@media screen and (max-width: 991px) {
+.row {
+  margin: 0!important;
+ }
 }
