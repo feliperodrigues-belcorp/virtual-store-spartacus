@@ -14,7 +14,7 @@
             " formControlName="userId" placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}" />
               </mat-form-field>
             </label>
-            <div class="invalid-feedback" *ngIf="
+            <div class="warning-message" *ngIf="
                 form.controls['userId'].invalid && (form.controls['userId'].touched || form.controls['userId'].dirty)
               ">
               <span>{{ 'loginForm.wrongEmailFormat' | cxTranslate }}</span>

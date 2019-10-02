@@ -62,7 +62,7 @@
                   " type="password" name="password" placeholder="{{ 'register.password.placeholder' | cxTranslate }}"
                     formControlName="password" />
                 </mat-form-field>
-                <div class="invalid-feedback"
+                <div class="warning-message"
                   *ngIf="userRegistrationForm.get('password').invalid && userRegistrationForm.get('password').dirty">
                   <span>{{ 'register.passwordMinRequirements' | cxTranslate }}</span>
                 </div>
@@ -77,7 +77,8 @@
                   " type="password" name="confirmpassword"
                     placeholder="{{ 'register.confirmNewPassword' | cxTranslate }}" formControlName="passwordconf" />
                 </mat-form-field>
-                <div class="invalid-feedback" *ngIf="
+                <div class="warning-message"
+                    *ngIf="
                           userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value &&
                           userRegistrationForm.get('passwordconf').value
                           ">

@@ -76,8 +76,8 @@
     "emailMarketing": "Acepto el documento de autorización de envío de publicidad",
     "confirmThatRead": "I am confirming that I have read and agreed with the",
     "selectTitle": "Select Title",
-    "passwordMinRequirements": "Password must be six characters minimum, with one uppercase letter, one number, one symbol",
-    "bothPasswordMustMatch": "Both password must match",
+    "passwordMinRequirements": "La contraseña debe tener ocho caracteres como mínimo, con una letra mayúscula, un número, un símbolo",
+    "bothPasswordMustMatch": "Ambas contraseñas deben coincidir",
     "titleRequired": "Title is required.",
     "postRegisterMessage": "Please log in with provided credentials."
   }

@@ -122,7 +122,12 @@ app-belcorp-register {
       &:hover { 
         background:var(--cx-color-text);
         color: var(--cx-color-white);
-        }
+      }
+      &:disabled {
+        background:var(--cx-color-text);
+        color: var(--cx-color-white);
+        cursor: not-allowed;
+      }
      }
     button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
       background: var(--cx-color-text);
@@ -210,6 +215,11 @@ input[type=checkbox]:checked {
 input[type=checkbox]:checked::after {
   top:0.1875rem;
   left: 0.1875rem;
+}
+
+.warning-message {
+  font-size: 0.75rem;
+  color: var(--cx-color-danger);
 }
 
 @media screen and (max-width: 991px) {
