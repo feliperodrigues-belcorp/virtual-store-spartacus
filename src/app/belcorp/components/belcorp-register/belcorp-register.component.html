@@ -47,8 +47,7 @@
             <div class="form-group">
               <label>
                 <mat-form-field class="cx-register__session--input">
-                  <input matInput type="tel"
-                    placeholder="{{ 'register.phone.placeholder' | cxTranslate }}" name="phone"
+                  <input matInput type="tel" placeholder="{{ 'register.phone.placeholder' | cxTranslate }}" name="phone"
                     formControlName="phone" />
                 </mat-form-field>
               </label>
@@ -136,3 +135,74 @@
     <cx-spinner></cx-spinner>
   </div>
 </ng-template>
+
+
+<div class="cx-customer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <img
+          src="https://vilamulher.com.br/imagens/vilamulher/thumbs/2015/11/06/6-produtos-para-vender-e-ter-renda-extra40-1-thumb-570.jpg">
+      </div>
+      <div class="col-md-4">
+        <h1>Encuentra a tu consultora</h1>
+        <p>Selecciona el medio de búsqueda</p>
+        <mat-accordion>
+          <mat-expansion-panel class="cx-customer__select">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="cx-customer__select--text">
+                <mat-radio-button>Dados Personales</mat-radio-button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form>
+              <div class="form-group">
+                <label>
+                  <mat-form-field class="cx-register__session--input">
+                    <input matInput type="text" name="firstname"
+                      placeholder="{{ 'register.firstName.placeholder' | cxTranslate }}" />
+                  </mat-form-field>
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                  <mat-form-field class="cx-register__session--input">
+                    <input matInput type="text" name="lastname"
+                      placeholder="{{ 'register.lastName.placeholder' | cxTranslate }}" />
+                  </mat-form-field>
+                </label>
+              </div>
+              <div class="form-group">
+                <label>
+                  <mat-form-field class="cx-register__session--input">
+                    <input matInput type="text" name="Distrito" placeholder="Distrito" />
+                  </mat-form-field>
+                </label>
+              </div>
+
+              <button type="submit" (click)="submit()" class="btn btn-block cx-register__session--btn">
+                Buscar consultora
+              </button>
+            </form>
+          </mat-expansion-panel>
+          <mat-expansion-panel class="cx-customer__select">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="cx-customer__select--text">
+                <mat-radio-button> Código</mat-radio-button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            Panel 2 comes here
+          </mat-expansion-panel>
+          <mat-expansion-panel class="cx-customer__select">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="cx-customer__select--text">
+                <mat-radio-button>Celular</mat-radio-button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            Panel 3 comes here
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </div>
+    </div>
+  </div>
+</div>

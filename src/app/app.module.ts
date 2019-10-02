@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
+import { NgxMaskModule } from 'ngx-mask';
 import { AppComponent } from './app.component';
-import { NgxMaskModule} from 'ngx-mask';
-
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
+
 
 @NgModule({
   declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent],
@@ -29,6 +29,8 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
+    MatExpansionModule,
+    MatRadioModule,
 
     B2cStorefrontModule.withConfig({
       backend: {
@@ -80,4 +82,4 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
