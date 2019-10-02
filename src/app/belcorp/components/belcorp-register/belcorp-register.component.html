@@ -9,7 +9,11 @@
             <div class="form-group">
               <label>
                 <mat-form-field class="cx-register__session--input">
-                  <input matInput type="text" name="firstname" placeholder="Nombre"
+                  <input matInput type="text" name="firstname"  [class.is-invalid]="
+                  userRegistrationForm.get('firstName').errors &&
+                   userRegistrationForm.get('firstName').errors['InvalidName'] &&
+                  userRegistrationForm.get('firstName').dirty
+                " placeholder="Nombre"
                     formControlName="firstName"/>
                 </mat-form-field>
               </label>
@@ -18,7 +22,11 @@
             <div class="form-group">
               <label>
                 <mat-form-field class="cx-register__session--input">
-                  <input matInput type="text" name="lastname" placeholder="Apellido" formControlName="lastName" />
+                  <input matInput type="text" name="lastname"  [class.is-invalid]="
+                  userRegistrationForm.get('lastName').errors &&
+                   userRegistrationForm.get('lastName').errors['InvalidName'] &&
+                  userRegistrationForm.get('lastName').dirty
+                "  placeholder="Apellido" formControlName="lastName" />
                 </mat-form-field>
               </label>
             </div>

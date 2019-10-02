@@ -14,6 +14,14 @@ export class CustomFormValidators {
     return email.match('[.][a-zA-Z]+$') ? null : { InvalidEmail: true };
   }
 
+  static nameValidator(
+    control: AbstractControl
+  ): ValidationErrors | null {
+    const name = control.value as string;
+
+    return name.match('^[a-zA-ZÀ-ÖØ-öø-ÿ ]+$') ? null : { InvalidName: true };
+  }
+
   static emailValidator(control: AbstractControl): ValidationErrors | null {
     const email = control.value as string;
 
