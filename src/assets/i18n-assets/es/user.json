@@ -21,7 +21,6 @@
       "finish": "Finalizar tus pedidos más rápido",
       "consult": "Consultar tu historial de pedidos"
     },
-
     "dontHaveAccount": "Don’t have an account",
     "emailAddress": {
       "label": "Email address",
@@ -41,31 +40,40 @@
       "placeholder": "Confirm Password"
     },
     "managmentInMyAccount": "Management in My Account.",
-    "termsAndConditions": "Terms & Conditions",
+    "termsAndConditions": "Al crear una cuenta estás aceptando los",
+    "termsAndConditionsLink": "Términos y Condiciones",
     "signIn": "I already have an account. Sign In",
     "register": "Regístrate",
-    "confirmNewPassword": "Confirm New Password",
+    "confirmNewPassword": "Confirmar contraseña",
     "resetPassword": "Reset Password",
     "createAccount": "Create an account",
     "title": "Title",
     "firstName": {
       "label": "First name",
-      "placeholder": "First name"
+      "placeholder": "Nombre"
     },
     "lastName": {
       "label": "Last name",
-      "placeholder": "Last name"
+      "placeholder": "Apellido"
     },
     "emailAddress": {
       "label": "Email address",
-      "placeholder": "Email address"
+      "placeholder": "Correo electrónico"
     },
     "password": {
       "label": "Password",
-      "placeholder": "Password"
+      "placeholder": "Contraseña"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Telefono"
+    },
+    "ingresar": {
+      "text": "¿Tienes cuenta? Ingresa ahora",
+      "ingresarBtn": "Ingresar con mi cuenta"
     },
     "newPassword": "New Password",
-    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "emailMarketing": "Acepto el documento de autorización de envío de publicidad",
     "confirmThatRead": "I am confirming that I have read and agreed with the",
     "selectTitle": "Select Title",
     "passwordMinRequirements": "Password must be six characters minimum, with one uppercase letter, one number, one symbol",

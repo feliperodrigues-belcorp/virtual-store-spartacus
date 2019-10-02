@@ -2,19 +2,18 @@
   <div class="row">
     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 cx-register__session">
       <div class="cx-register__session--box">
-        <p>Proceso de pago</p>
-        <h1>Regístrate</h1>
+        <p>{{ 'register.pago' | cxTranslate }}</p>
+        <h1>{{ 'register.register' | cxTranslate }}</h1>
         <div class="cx-section">
           <form [formGroup]="userRegistrationForm">
             <div class="form-group">
               <label>
                 <mat-form-field class="cx-register__session--input">
-                  <input matInput type="text" name="firstname"  [class.is-invalid]="
+                  <input matInput type="text" name="firstname" [class.is-invalid]="
                   userRegistrationForm.get('firstName').errors &&
                    userRegistrationForm.get('firstName').errors['InvalidName'] &&
                   userRegistrationForm.get('firstName').dirty
-                " placeholder="Nombre"
-                    formControlName="firstName"/>
+                " placeholder="{{ 'register.firstName.placeholder' | cxTranslate }}" formControlName="firstName" />
                 </mat-form-field>
               </label>
             </div>
@@ -22,11 +21,11 @@
             <div class="form-group">
               <label>
                 <mat-form-field class="cx-register__session--input">
-                  <input matInput type="text" name="lastname"  [class.is-invalid]="
+                  <input matInput type="text" name="lastname" [class.is-invalid]="
                   userRegistrationForm.get('lastName').errors &&
                    userRegistrationForm.get('lastName').errors['InvalidName'] &&
                   userRegistrationForm.get('lastName').dirty
-                "  placeholder="Apellido" formControlName="lastName" />
+                " placeholder="{{ 'register.lastName.placeholder' | cxTranslate }}" formControlName="lastName" />
                 </mat-form-field>
               </label>
             </div>
@@ -35,19 +34,22 @@
               <label>
                 <mat-form-field class="cx-register__session--input">
                   <input matInput [class.is-invalid]="
-                      userRegistrationForm.get('email').errors &&
-                      (userRegistrationForm.get('email').errors['email'] ||
-                        userRegistrationForm.get('email').errors['InvalidEmail']) &&
-                      userRegistrationForm.get('email').dirty
-                    " type="email" name="email" placeholder="Correo electrónico" formControlName="email" />
+                userRegistrationForm.get('email').errors &&
+                (userRegistrationForm.get('email').errors['email'] ||
+                userRegistrationForm.get('email').errors['InvalidEmail']) &&
+                userRegistrationForm.get('email').dirty
+                " type="email" name="email" placeholder="{{ 'register.emailAddress.placeholder' | cxTranslate }}"
+                    formControlName="email" />
                 </mat-form-field>
               </label>
             </div>
 
             <div class="form-group">
               <label>
-                <mat-form-field class="cx-register__session--input" >
-                  <input matInput type="tel" prefix="9" mask='XX-XXX-XXX' placeholder="Telefono"  name="phone"  formControlName="phone"/>
+                <mat-form-field class="cx-register__session--input">
+                  <input matInput type="tel" mask='XXX-XXX-XXX'
+                    placeholder="{{ 'register.phone.placeholder' | cxTranslate }}" name="phone"
+                    formControlName="phone" />
                 </mat-form-field>
               </label>
             </div>
@@ -56,8 +58,9 @@
               <label>
                 <mat-form-field class="cx-register__session--input">
                   <input matInput [class.is-invalid]="
-                      userRegistrationForm.get('password').invalid && userRegistrationForm.get('password').dirty
-                    " type="password" name="password" placeholder="Contraseña" formControlName="password" />
+                  userRegistrationForm.get('password').invalid && userRegistrationForm.get('password').dirty
+                  " type="password" name="password" placeholder="{{ 'register.password.placeholder' | cxTranslate }}"
+                    formControlName="password" />
                 </mat-form-field>
                 <div class="invalid-feedback"
                   *ngIf="userRegistrationForm.get('password').invalid && userRegistrationForm.get('password').dirty">
@@ -70,14 +73,14 @@
               <label>
                 <mat-form-field class="cx-register__session--input">
                   <input matInput [class.is-invalid]="
-                      userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value
-                    " type="password" name="confirmpassword" placeholder="Confirmar contraseña"
-                    formControlName="passwordconf" />
+                  userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value
+                  " type="password" name="confirmpassword"
+                    placeholder="{{ 'register.confirmNewPassword' | cxTranslate }}" formControlName="passwordconf" />
                 </mat-form-field>
                 <div class="invalid-feedback" *ngIf="
-                      userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value &&
-                      userRegistrationForm.get('passwordconf').value
-                    ">
+                          userRegistrationForm.get('password').value !== userRegistrationForm.get('passwordconf').value &&
+                          userRegistrationForm.get('passwordconf').value
+                          ">
                   <span>{{ 'register.bothPasswordMustMatch' | cxTranslate }}</span>
                 </div>
               </label>
@@ -89,9 +92,9 @@
                   <input type="checkbox" name="termsandconditions" formControlName="termsandconditions"
                     class="cx-register__session--term" />
                   <span class="cx-register__session--term-link">
-                    Al crear una cuenta estás aceptando los
+                    {{ 'register.termsAndConditions' | cxTranslate }}
                     <a [routerLink]="{ cxRoute: 'termsAndConditions' } | cxUrl" target="_blank">
-                      Términos y Condiciones
+                      {{ 'register.termsAndConditionsLink' | cxTranslate }}
                     </a>
                   </span>
                 </label>
@@ -104,7 +107,7 @@
                   <input type="checkbox" name="newsletter" class="form-check-input" formControlName="newsletter"
                     class="cx-register__session--term" />
                   <span class="cx-register__session--term-link">
-                    Acepto el documento de autorización de envío de publicidad
+                    {{ 'register.emailMarketing' | cxTranslate }}
                   </span>
                 </label>
               </div>
@@ -112,17 +115,17 @@
 
             <button type="submit" (click)="submit()" [disabled]="userRegistrationForm.invalid"
               class="btn btn-block cx-register__session--btn">
-              Regístrate
+              {{ 'register.register' | cxTranslate }}
             </button>
           </form>
         </div>
       </div>
     </div>
     <div class="col-lg-4 col-md-12 cx-register__ingresar">
-      <h1> ¿Tienes cuenta? Ingresa ahora </h1>
+      <h1> {{ 'register.ingresar.text' | cxTranslate }}</h1>
 
       <button type="submit" class="btn cx-register__ingresar--btn" [routerLink]="{ cxRoute: 'login' } | cxUrl">
-        Ingresar con mi cuenta</button>
+        {{ 'register.ingresar.ingresarBtn' | cxTranslate }}</button>
 
     </div>
   </div>
