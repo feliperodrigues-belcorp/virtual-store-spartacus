@@ -13,9 +13,9 @@ import { CustomFormValidators } from '../../utils/validators/custom-form-validat
 export class BelcorpRegisterComponent extends RegisterComponent {
   userRegistrationForm: FormGroup = this.fb.group(
     {
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      phone: ['', Validators.required],
+      firstName: ['', [Validators.required,  CustomFormValidators.nameValidator]],
+      lastName: ['', [Validators.required,  CustomFormValidators.nameValidator]],
+      phone: [''],
       email: ['', [Validators.required, CustomFormValidators.emailValidator]],
       password: [
         '',
