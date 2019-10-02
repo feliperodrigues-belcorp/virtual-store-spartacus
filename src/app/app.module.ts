@@ -8,8 +8,11 @@ import { translationChunksConfig, translations } from '@spartacus/assets';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
+import { NgxMaskModule} from 'ngx-mask';
+
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
+
 @NgModule({
   declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent],
   imports: [
@@ -17,6 +20,7 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
     ReactiveFormsModule,
     I18nModule,
     UrlModule,
+    NgxMaskModule.forRoot({}),
     RouterModule,
     SpinnerModule,
     BrowserModule.withServerTransition({ appId: 'spartacus-app' }),
