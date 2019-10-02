@@ -15,7 +15,7 @@ export class BelcorpRegisterComponent extends RegisterComponent {
     {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: [''],
       email: ['', [Validators.required, CustomFormValidators.emailValidator]],
       password: [
         '',
