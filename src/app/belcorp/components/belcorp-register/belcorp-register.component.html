@@ -140,11 +140,10 @@
 <div class="cx-customer">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <img
-          src="https://vilamulher.com.br/imagens/vilamulher/thumbs/2015/11/06/6-produtos-para-vender-e-ter-renda-extra40-1-thumb-570.jpg">
+      <div class="col-lg-7 cx-consultant__display">
+        <img src="../../../../assets/images/consultant.jpeg">
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-5 col-md-12 cx-customer__select--margin" *ngIf="!(loading$ | async); else loading">
         <h1>Encuentra a tu consultora</h1>
         <p>Selecciona el medio de búsqueda</p>
         <mat-accordion>
@@ -179,7 +178,7 @@
                 </label>
               </div>
 
-              <button type="submit" (click)="submit()" class="btn btn-block cx-register__session--btn">
+              <button type="submit" (click)="submit()" class="btn btn-block cx-customer__select--btn">
                 Buscar consultora
               </button>
             </form>
@@ -190,7 +189,18 @@
                 <mat-radio-button> Código</mat-radio-button>
               </mat-panel-title>
             </mat-expansion-panel-header>
-            Panel 2 comes here
+            <form>
+              <div class="form-group">
+                <label>
+                  <mat-form-field class="cx-register__session--input">
+                    <input matInput type="text" name="código" placeholder="Código" />
+                  </mat-form-field>
+                </label>
+              </div>
+              <button type="submit" (click)="submit()" class="btn btn-block cx-customer__select--btn">
+                Buscar consultora
+              </button>
+            </form>
           </mat-expansion-panel>
           <mat-expansion-panel class="cx-customer__select">
             <mat-expansion-panel-header>
@@ -198,11 +208,51 @@
                 <mat-radio-button>Celular</mat-radio-button>
               </mat-panel-title>
             </mat-expansion-panel-header>
-            Panel 3 comes here
+            <form>
+              <div class="form-group">
+                <label>
+                  <mat-form-field class="cx-register__session--input">
+                    <input matInput type="tel" name="celular" placeholder="Celular" />
+                  </mat-form-field>
+                </label>
+              </div>
+              <button type="submit" (click)="submit()" class="btn btn-block cx-customer__select--btn">
+                Buscar consultora
+              </button>
+            </form>
           </mat-expansion-panel>
         </mat-accordion>
 
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="cx-consultant">
+  <div class="container">
+    <div>
+      <h1>Encuentra a tu consultora</h1>
+      <div class="cx-consultant__select">
+        <h2 class="cx-consultant__select--text">1 consultora selecionada </h2>
+      </div>
+      <p>Selecciona la tienda de la consultora que quieres visitar.</p>
+    </div>
+
+    <div class="card cx-consultant__card">
+      <div class="cx-consultant__card--img">
+        <img class="card-img-top cx-consultant__card--div" src="https://pbs.twimg.com/media/DzKfUMMX0AEBu75.jpg"
+          alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title card cx-consultant__card--title">Saryta</h5>
+        <p class="card-text cx-consultant__card--paragraf">Tienda virtual de Sara Jimenez</p>
+      </div>
+
+    </div>
+    <div class="cx-consultant__search">
+      <button type="submit" (click)="submit()" class="btn btn-block cx-customer__select--btn">
+        Realizar otra búsqueda
+      </button>
     </div>
   </div>
 </div>

@@ -225,7 +225,11 @@ input[type=checkbox]:checked::after {
   img {
     width: 488px;
     height: 365px;
-
+     
+     @media screen and (max-width: 991px) {
+       width: 100%;
+       
+     }
   }
   
   h1 {
@@ -248,7 +252,7 @@ input[type=checkbox]:checked::after {
    
    &__select {
      margin-bottom: 10px;
-     box-shadow: none;
+     
 
       &--text {
         padding-top: 5px;
@@ -258,8 +262,33 @@ input[type=checkbox]:checked::after {
         line-height: 17px;
 
       }
-   } 
 
+      &--margin{
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 991px) {
+          padding: 0;
+          
+        }
+      }
+       
+      &--btn {
+        background:var(--cx-color-text);
+        color: var(--cx-color-white);
+        font-size: 0.75rem;
+        line-height: 0.875rem;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 0.0625rem;
+        width: 100%;
+        border-radius: 0.125rem;
+        cursor: pointer;
+  
+       }
+      
+   } 
+    
+   
    .mat-expansion-indicator {
     display: none;
    }
@@ -277,3 +306,107 @@ input[type=checkbox]:checked::after {
    }
 }
 
+.cx-consultant {
+  margin-top:50px;
+  border-top:2px solid var(--cx-color-text);
+
+  &__display{
+    
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__select{
+    
+    width: 179px;
+    height: 24px;
+    background: #C4C4C4;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  
+    &--text { 
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-top: 5px;
+    text-align: center;
+
+    }
+  }
+
+  &__card {
+    width: 320px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      
+    }
+
+    &--img {
+    padding-top: 10px;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    }
+
+    &--div{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    }
+
+    &--title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    border: 0;
+    margin:0;
+    }
+
+    &--paragraf{
+      text-align: center;
+      padding:0;
+    }
+
+  } 
+
+  &__search {
+    margin: 0 auto;
+    width: 320px;
+    text-align: center;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      
+    }
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.2px;
+    color: #808080;
+    padding-top:10px;
+    }
+  
+}
