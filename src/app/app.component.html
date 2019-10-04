@@ -8,24 +8,18 @@
   <app-belcorp-register></app-belcorp-register>
 </ng-template>
 
-<ng-template cxOutletRef="BreadcrumbComponent">
-</ng-template>
-
-<ng-template cxOutletRef="BelcorpSearchConsultantComponent" cxOutletPos="replace">
-  here
-</ng-template>
-
+<ng-template cxOutletRef="BreadcrumbComponent"> </ng-template>
 
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
-  {{product.product.brand}}
+  {{ product.product.brand }}
   <div *ngFor="let item of product.product.tips">
-    <div>{{item.title}}</div>
-    <div>{{item.description}}</div>
+    <div>{{ item.title }}</div>
+    <div>{{ item.description }}</div>
     <img [src]="item.urlImage" style="width: 50px;" />
   </div>
 
   <div *ngFor="let item of product.product.descubreMas">
-    <div>{{item.title}}</div>
-    <div>{{item.description}}</div>
+    <div>{{ item.title }}</div>
+    <div>{{ item.description }}</div>
   </div>
 </ng-template>

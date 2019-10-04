@@ -5,33 +5,17 @@ import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-bro
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { translationChunksConfig, translations } from '@spartacus/assets';
-import { I18nModule, UrlModule, NotAuthGuard } from '@spartacus/core';
+import { I18nModule, UrlModule } from '@spartacus/core';
 import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
+import { NgxMaskModule } from 'ngx-mask';
 import { AppComponent } from './app.component';
-import { NgxMaskModule} from 'ngx-mask';
-
-import {SearchConsultantModule} from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
-import { SearchConsultantComponent } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.component';
+import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
+
 @NgModule({
   declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    I18nModule,
-    UrlModule,
-    NgxMaskModule.forRoot({}),
-    RouterModule,
-    SpinnerModule,
-    BrowserModule.withServerTransition({ appId: 'spartacus-app' }),
-    BrowserTransferStateModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatIconModule,
-    SearchConsultantModule,
-
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
@@ -77,7 +61,20 @@ import { SearchConsultantComponent } from './belcorp/components/belcorp-search-c
         },
       },
     }),
-
+    FormsModule,
+    ReactiveFormsModule,
+    I18nModule,
+    UrlModule,
+    NgxMaskModule.forRoot({}),
+    RouterModule,
+    SpinnerModule,
+    BrowserModule.withServerTransition({ appId: 'spartacus-app' }),
+    BrowserTransferStateModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    SearchConsultantModule,
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
