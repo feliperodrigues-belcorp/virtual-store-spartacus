@@ -11,6 +11,11 @@
 <ng-template cxOutletRef="BreadcrumbComponent">
 </ng-template>
 
+<ng-template cxOutletRef="BelcorpSearchConsultantComponent" cxOutletPos="replace">
+  here
+</ng-template>
+
+
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
   {{product.product.brand}}
   <div *ngFor="let item of product.product.tips">
