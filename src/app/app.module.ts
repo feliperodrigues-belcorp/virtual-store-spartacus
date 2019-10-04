@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatExpansionModule, MatRadioModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -76,6 +76,8 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     MatIconModule,
     SearchConsultantModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
+    MatRadioModule,
   ],
   bootstrap: [AppComponent],
 })

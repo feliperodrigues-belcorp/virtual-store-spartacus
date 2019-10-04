@@ -12,6 +12,15 @@
 
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
   {{ product.product.brand }}
+  <div *ngFor="let itemVariant of product.product.variantOptions"> 
+    <div>
+      <a [href]="itemVariant.url">{{ itemVariant.code }}</a>
+      <div *ngFor="let itemVariantAtrr of itemVariant.variantOptionQualifiers">
+        <span>{{itemVariantAtrr.qualifier}}</span>
+        <span>{{itemVariantAtrr.value}}</span>
+      </div>
+    </div>
+  </div>
   <div *ngFor="let item of product.product.tips">
     <div>{{ item.title }}</div>
     <div>{{ item.description }}</div>

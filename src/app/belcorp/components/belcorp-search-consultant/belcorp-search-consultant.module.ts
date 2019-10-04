@@ -2,6 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {
+    MatExpansionModule,
+    MatRadioModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule
+ } from '@angular/material';
 import { ConfigModule, I18nModule, NotAuthGuard, UrlModule } from '@spartacus/core';
 import { SearchConsultantComponent } from './belcorp-search-consultant.component';
 
@@ -12,6 +20,12 @@ import { SearchConsultantComponent } from './belcorp-search-consultant.component
     ReactiveFormsModule,
     RouterModule,
     UrlModule,
+    MatExpansionModule,
+    MatRadioModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
     ConfigModule.withConfig({
       cmsComponents: {
         BelcorpSearchConsultantComponent: {
