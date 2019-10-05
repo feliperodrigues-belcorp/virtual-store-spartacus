@@ -23,7 +23,7 @@ export class BelcorpRegisterComponent extends RegisterComponent {
       ],
       passwordconf: ['', Validators.required],
       newsletter: [false],
-      termsandconditions: [false, Validators.requiredTrue],
+      terms: [false, Validators.requiredTrue],
     },
     { validator: CustomFormValidators.matchPassword }
   );
@@ -46,7 +46,7 @@ export class BelcorpRegisterComponent extends RegisterComponent {
 
   // DATA TO BE SEND
   collectDataFromRegisterForm(formData: any): BelcorpUserSignUp {
-    const { firstName, lastName, email, password, titleCode, phone, termsandconditions } = formData;
+    const { firstName, lastName, email, password, titleCode, phone, terms } = formData;
 
     return {
       firstName,
@@ -54,7 +54,7 @@ export class BelcorpRegisterComponent extends RegisterComponent {
       uid: email.toLowerCase(),
       password,
       titleCode,
-      termsandconditions,
+      terms,
       phone
     };
   }
