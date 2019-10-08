@@ -3,7 +3,9 @@
 <ng-template cxOutletRef="ReturningCustomerLoginComponent" cxOutletPos="replace">
   <app-belcorp-login-form></app-belcorp-login-form>
 </ng-template>
-
+<ng-template cxOutletRef="ForgotPasswordComponent" cxOutletPos="replace">
+  <app-belcorp-password></app-belcorp-password>
+</ng-template>
 <ng-template cxOutletRef="RegisterCustomerComponent" cxOutletPos="replace">
   <app-belcorp-register></app-belcorp-register>
 </ng-template>
@@ -16,7 +18,7 @@
 
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
   {{ product.product.brand }}
-  <div *ngFor="let itemVariant of product.product.variantOptions"> 
+  <div *ngFor="let itemVariant of product.product.variantOptions">
     <div>
       <a [href]="itemVariant.url">{{ itemVariant.code }}</a>
       <div *ngFor="let itemVariantAtrr of itemVariant.variantOptionQualifiers">

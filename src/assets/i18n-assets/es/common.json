@@ -1,11 +1,11 @@
 {
   "common": {
-    "cancel": "Cancel",
+    "cancel": "Cancelar",
     "delete": "Delete",
     "remove": "Remove",
     "edit": "Edit",
     "back": "Back",
-    "submit": "Submit",
+    "submit": "Enviar",
     "continue": "Continue",
     "save": "Save",
     "done": "Done",
@@ -88,7 +88,7 @@
     "item_plural": "{{count}} items currently in your cart"
   },
   "miniLogin": {
-    "userGreeting": "Hi, {{name}}",
-    "signInRegister": "Sign In / Register"
+    "userGreeting": "Hola, {{name}}",
+    "signInRegister": "Mi cuenta"
   }
 }
