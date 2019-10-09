@@ -11,14 +11,16 @@ import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
 import { NgxMaskModule } from 'ngx-mask';
 import { AppComponent } from './app.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
+import { BelcorpMyaccountAddressBookCardComponent } from './belcorp/components/belcorp-myaccount-address-book/belcorp-myaccount-address-book-card/belcorp-myaccount-address-book-card.component';
 import { BelcorpMyaccountAddressBookComponent } from './belcorp/components/belcorp-myaccount-address-book/belcorp-myaccount-address-book.component';
+import { BelcorpMyaccountAddressFormComponent } from './belcorp/components/belcorp-myaccount-address-form/belcorp-myaccount-address-form.component';
 import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
 
 @NgModule({
-  declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent, BelcorpPasswordComponent, BelcorpMyaccountAddressBookComponent],
+  declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent, BelcorpPasswordComponent, BelcorpMyaccountAddressBookComponent, BelcorpMyaccountAddressBookCardComponent, BelcorpMyaccountAddressFormComponent],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
