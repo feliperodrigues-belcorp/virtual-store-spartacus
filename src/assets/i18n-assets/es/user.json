@@ -3,8 +3,8 @@
     "resetPassword": "Reset password",
     "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
     "emailAddress": {
-      "label": "Email address",
-      "placeholder": "Enter email"
+      "label": "Enviar correo electrónico",
+      "placeholder": "Correo electrónico"
     },
     "enterValidEmail": "Please enter a valid email.",
     "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
@@ -14,7 +14,7 @@
     "forgotPassword": "¿Olvidaste tu contraseña?",
     "signIn": "Iniciar sesión",
     "pago": "Proceso de pago",
-    "register": "Register",
+    "register": "Regístrarme",
     "noAccount": {
       "register": "¿No tienes cuenta? Regístrate y podrás:",
       "notify": "Notificarte sobre los estados de compra",
@@ -23,14 +23,14 @@
     },
     "dontHaveAccount": "Don’t have an account",
     "emailAddress": {
-      "label": "Email address",
-      "placeholder": "Enter email"
+      "label": "Correo electrónico",
+      "placeholder": "Correo electrónico"
     },
     "password": {
-      "label": "Password",
-      "placeholder": "Password"
+      "label": "Contraseña",
+      "placeholder": "Contraseña"
     },
-    "wrongEmailFormat": "This is not a valid email format."
+    "wrongEmailFormat": "Este no es un formato de correo electrónico válido."
   },
   "register": {
     "pago": "Proceso de pago",

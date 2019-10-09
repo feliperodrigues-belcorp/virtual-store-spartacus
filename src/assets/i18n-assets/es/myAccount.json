@@ -39,11 +39,11 @@
   "updateEmailForm": {
     "newEmailAddress": {
       "label": "New email address",
-      "placeholder": "Enter email"
+      "placeholder": "Correo electrónico"
     },
     "confirmNewEmailAddress": {
       "label": "Confirm new email address",
-      "placeholder": "Enter email"
+      "placeholder": "Correo electrónico"
     },
     "enterValidEmail": "Please enter a valid email.",
     "bothEmailMustMatch": "Both emails must match",

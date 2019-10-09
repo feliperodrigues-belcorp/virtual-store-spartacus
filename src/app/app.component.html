@@ -4,7 +4,9 @@
   <ng-template cxOutletRef="BreadcrumbComponent"></ng-template>
   <app-belcorp-login-form></app-belcorp-login-form>
 </ng-template>
-
+<ng-template cxOutletRef="ForgotPasswordComponent" cxOutletPos="replace">
+  <app-belcorp-password></app-belcorp-password>
+</ng-template>
 <ng-template cxOutletRef="RegisterCustomerComponent" cxOutletPos="replace">
   <ng-template cxOutletRef="BreadcrumbComponent"></ng-template>
   <app-belcorp-register></app-belcorp-register>
