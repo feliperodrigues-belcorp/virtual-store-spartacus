@@ -1,14 +1,20 @@
 <cx-storefront></cx-storefront>
 
 <ng-template cxOutletRef="ReturningCustomerLoginComponent" cxOutletPos="replace">
+  <ng-template cxOutletRef="BreadcrumbComponent"></ng-template>
   <app-belcorp-login-form></app-belcorp-login-form>
 </ng-template>
 
 <ng-template cxOutletRef="RegisterCustomerComponent" cxOutletPos="replace">
+  <ng-template cxOutletRef="BreadcrumbComponent"></ng-template>
   <app-belcorp-register></app-belcorp-register>
 </ng-template>
 
-<ng-template cxOutletRef="BreadcrumbComponent"></ng-template>
+
+<ng-template cxOutletRef="BelcorpSearchConsultantComponent" cxOutletPos="replace">
+  <ng-template cxOutletRef="BreadcrumbComponent"></ng-template>
+  <app-belcorp-search-consultant></app-belcorp-search-consultant>
+</ng-template>
 
 <ng-template cxOutletRef="ProductVariantSelectorComponent"></ng-template>
 <ng-template cxOutletRef="CookieNotificationComponent"></ng-template>
@@ -16,7 +22,7 @@
 
 <ng-template cxOutletRef="PDP.PRICE" cxOutletPos="before" let-product>
   {{ product.product.brand }}
-  <div *ngFor="let itemVariant of product.product.variantOptions"> 
+  <div *ngFor="let itemVariant of product.product.variantOptions">
     <div>
       <a [href]="itemVariant.url">{{ itemVariant.code }}</a>
       <div *ngFor="let itemVariantAtrr of itemVariant.variantOptionQualifiers">

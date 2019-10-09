@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthRedirectService, AuthService, GlobalMessageService, UserService } from '@spartacus/core';
 import { RegisterComponent } from '@spartacus/storefront';
 import { BelcorpUserSignUp } from '../../core/src/model/belcorp.misc.model';
@@ -13,8 +13,8 @@ import { CustomFormValidators } from '../../utils/validators/custom-form-validat
 export class BelcorpRegisterComponent extends RegisterComponent {
   userRegistrationForm: FormGroup = this.fb.group(
     {
-      firstName: ['', [Validators.required,  CustomFormValidators.nameValidator]],
-      lastName: ['', [Validators.required,  CustomFormValidators.nameValidator]],
+      firstName: ['', [Validators.required, CustomFormValidators.nameValidator]],
+      lastName: ['', [Validators.required, CustomFormValidators.nameValidator]],
       phone: ['', Validators.pattern('^[0-9]+$')],
       email: ['', [Validators.required, CustomFormValidators.emailValidator]],
       password: [

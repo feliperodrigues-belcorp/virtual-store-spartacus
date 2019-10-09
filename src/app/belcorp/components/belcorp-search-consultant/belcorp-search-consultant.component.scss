@@ -1,10 +1,13 @@
+
 .cx-customer {
-    margin-top:50px;
-    border-top:2px solid var(--cx-color-text);
-  
+    
+  .container {
+    max-width: 62rem;
+
+  }
     img {
-      width: 488px;
-      height: 365px;
+      width: 30.5rem;
+      height: 22.8125rem;
        
        @media screen and (max-width: 991px) {
          width: 100%;
@@ -14,36 +17,35 @@
     h1 {
       font-style: normal;
       font-weight: bold;
-      font-size: 20px;
-      line-height: 24px;
-      margin-top: 40px;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      margin-top: 2.5rem;
     }
   
     p {
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 0.2px;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
       color: #808080;
-      padding-top:10px;
+      padding-top:0.625rem;
       }
      
      &__select {
-       margin-bottom: 10px;
+       margin-bottom: 0.625rem;
        
   
         &--text {
-          padding-top: 5px;
+          padding-top: 0.3125rem;
           font-style: normal;
           font-weight: bold;
-          font-size: 14px;
-          line-height: 17px;
+          font-size: 0.875rem;
+          line-height: 1.0625rem;
   
         }
   
         &--margin{
-          margin-bottom: 20px;
+          margin-bottom: 1.25rem;
   
           @media screen and (max-width: 991px) {
             padding: 0;
@@ -86,8 +88,8 @@
   }
   
   .cx-consultant {
-    margin-top:50px;
-    border-top:2px solid var(--cx-color-text);
+    margin-top:3.125rem;
+    border-top:0.125rem solid var(--cx-color-text);
   
     &__display{
       
@@ -98,29 +100,29 @@
   
     &__select{
       
-      width: 179px;
-      height: 24px;
+      width: 11.1875rem;
+      height: 1.5rem;
       background: #C4C4C4;
-      border-radius: 20px;
-      margin-bottom: 12px;
+      border-radius: 1.25rem;
+      margin-bottom: 0.75rem;
     
       &--text { 
       font-family: Lato;
       font-style: normal;
       font-weight: bold;
-      font-size: 10px;
-      line-height: 12px;
+      font-size: 0.625rem;
+      line-height: 0.75rem;
       text-transform: uppercase;
-      color: #FFFFFF;
-      padding-top: 5px;
+      color:var(--cx-color-white);
+      padding-top: 0.3125rem;
       text-align: center;
   
       }
     }
   
     &__card {
-      width: 320px;
-      margin-bottom: 30px;
+      width: 20rem;
+      margin-bottom: 1.875rem;
   
       @media screen and (max-width: 991px) {
         width: 100%;
@@ -128,25 +130,25 @@
       }
   
       &--img {
-      padding-top: 10px;
+      padding-top: 0.625rem;
       margin: 0 auto;
       width: 50%;
       text-align: center;
       }
   
       &--div{
-      width: 80px;
-      height: 80px;
+      width: 5rem;
+      height: 5rem;
       border-radius: 50%;
       }
   
       &--title{
       font-style: normal;
       font-weight: bold;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1rem;
+      line-height: 1.1875rem;
       text-align: center;
-      color: #000000;
+      color: var(--cx-color-text);
       border: 0;
       margin:0;
       }
@@ -160,7 +162,7 @@
   
     &__search {
       margin: 0 auto;
-      width: 320px;
+      width: 20rem;
       text-align: center;
   
       @media screen and (max-width: 991px) {
@@ -172,20 +174,19 @@
     h1 {
       font-style: normal;
       font-weight: bold;
-      font-size: 20px;
-      line-height: 24px;
-      margin-top: 40px;
-      margin-bottom: 20px;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
     }
   
     p {
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 0.2px;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
       color: #808080;
-      padding-top:10px;
+      padding-top:0.625rem;
       }
     
   }
