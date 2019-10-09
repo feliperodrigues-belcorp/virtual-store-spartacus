@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthRedirectService, AuthService, GlobalMessageService, UserService } from '@spartacus/core';
 import { RegisterComponent } from '@spartacus/storefront';
 import { BelcorpUserSignUp } from '../../core/src/model/belcorp.misc.model';
@@ -27,7 +27,6 @@ export class BelcorpRegisterComponent extends RegisterComponent {
     },
     { validator: CustomFormValidators.matchPassword }
   );
-
 
 
   constructor(
