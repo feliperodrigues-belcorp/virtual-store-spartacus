@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
@@ -20,7 +21,14 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
 
 
 @NgModule({
-  declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent, BelcorpPasswordComponent, BelcorpMyaccountAddressBookComponent, BelcorpMyaccountAddressBookCardComponent, BelcorpMyaccountAddressFormComponent],
+  declarations:
+  [AppComponent,
+    BelcorpLoginFormComponent,
+    BelcorpRegisterComponent,
+    BelcorpPasswordComponent,
+    BelcorpMyaccountAddressBookComponent,
+    BelcorpMyaccountAddressBookCardComponent,
+    BelcorpMyaccountAddressFormComponent],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
@@ -30,6 +38,17 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
           legacy: false,
         },
       },
+      checkout: {
+        express: true,
+        guest: true
+      },
+      view: {
+        infiniteScroll: {
+          active: true,
+          productLimit: 500,
+          showMoreButton: false,
+         },
+       },
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['belcorp-pe', 'belcorp-cl'],
@@ -84,6 +103,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     BrowserAnimationsModule,
     MatExpansionModule,
     MatRadioModule,
+    NgSelectModule
   ],
   bootstrap: [AppComponent],
 })
