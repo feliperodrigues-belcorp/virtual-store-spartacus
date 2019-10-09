@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatExpansionModule, MatRadioModule } from '@angular/material';
+import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -10,11 +10,12 @@ import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
 import { NgxMaskModule } from 'ngx-mask';
 import { AppComponent } from './app.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
+import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
 @NgModule({
-  declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent],
+  declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent, BelcorpPasswordComponent],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
@@ -81,4 +82,4 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
