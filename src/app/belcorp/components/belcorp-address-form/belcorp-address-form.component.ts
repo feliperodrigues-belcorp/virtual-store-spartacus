@@ -5,11 +5,11 @@ import { AddressFormComponent, ModalService } from '@spartacus/storefront';
 import { BelcorpAddress } from '../../core/src/model/belcorp.misc.model';
 
 @Component({
-  selector: 'app-belcorp-myaccount-address-form',
-  templateUrl: './belcorp-myaccount-address-form.component.html',
-  styleUrls: ['./belcorp-myaccount-address-form.component.scss'],
+  selector: 'app-belcorp-address-form',
+  templateUrl: './belcorp-address-form.component.html',
+  styleUrls: ['./belcorp-address-form.component.scss']
 })
-export class BelcorpMyaccountAddressFormComponent extends AddressFormComponent {
+export class BelcorpAddressFormComponent extends AddressFormComponent {
   fb2: FormBuilder;
 
   constructor(

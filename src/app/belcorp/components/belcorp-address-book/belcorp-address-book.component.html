@@ -1,8 +1,8 @@
 <div class="cx-section">
   <ng-container *ngIf="
-      (addresses$ | async).length &&
-      !(showAddAddressForm || showEditAddressForm)
-    ">
+        (addresses$ | async).length &&
+        !(showAddAddressForm || showEditAddressForm)
+      ">
     <div class="row">
       <div class="col-md-6">
         <button class="btn btn-block btn-action" (click)="addAddressButtonHandle()">
@@ -13,8 +13,8 @@
 
     <div class="row cx-address-deck" *ngIf="!(addressesStateLoading$ | async); else loading">
       <div *ngFor="let address of (addresses$ | async)" class="col-md-6">
-        <app-belcorp-myaccount-address-book-card (editEvent)="editAddressButtonHandle(address)" [address]="address">
-        </app-belcorp-myaccount-address-book-card>
+        <app-belcorp-address-card (editEvent)="editAddressButtonHandle(address)" [address]="address">
+        </app-belcorp-address-card>
       </div>
     </div>
   </ng-container>
@@ -24,12 +24,12 @@
       <p class="cx-section-msg">
         {{ 'addressBook.addNewShippingAddress' | cxTranslate }}
       </p>
-      <app-belcorp-myaccount-address-form class="cx-form" showTitleCode="true"
+      <app-belcorp-address-form class="cx-form" showTitleCode="true"
         [showCancelBtn]="!((addresses$ | async).length === 0)"
         actionBtnLabel="{{ 'addressBook.addAddress' | cxTranslate }}"
         cancelBtnLabel="{{ 'addressBook.backToAddressList' | cxTranslate }}"
         [setAsDefaultField]="!((addresses$ | async).length === 0)" (submitAddress)="addAddressSubmit($event)"
-        (backToAddress)="addAddressCancel()"></app-belcorp-myaccount-address-form>
+        (backToAddress)="addAddressCancel()"></app-belcorp-address-form>
     </section>
   </ng-container>
 
@@ -38,11 +38,10 @@
       <p class="cx-section-msg">
         {{ 'addressBook.editShippingAddress' | cxTranslate }}
       </p>
-      <app-belcorp-myaccount-address-form showTitleCode="true"
-        actionBtnLabel="{{ 'addressBook.updateAddress' | cxTranslate }}"
+      <app-belcorp-address-form showTitleCode="true" actionBtnLabel="{{ 'addressBook.updateAddress' | cxTranslate }}"
         cancelBtnLabel="{{ 'addressBook.backToAddressList' | cxTranslate }}" [addressData]="currentAddress"
         (submitAddress)="editAddressSubmit($event)" (backToAddress)="editAddressCancel()">
-      </app-belcorp-myaccount-address-form>
+      </app-belcorp-address-form>
     </section>
   </ng-container>
 </div>

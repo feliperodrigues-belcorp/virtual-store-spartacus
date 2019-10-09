@@ -32,7 +32,7 @@
   "closeAccount": {
     "confirmAccountClosure": "Confirm Account Closure",
     "confirmAccountClosureMessage": "Are you sure you want to close your account?",
-    "closeMyAccount": "CLOSE MY ACCOUNT",
+    "closeMyAccount": "Deslogar",
     "accountClosedSuccessfully": "Account closed with success",
     "accountClosedFailure": "Failed to close account"
   },
