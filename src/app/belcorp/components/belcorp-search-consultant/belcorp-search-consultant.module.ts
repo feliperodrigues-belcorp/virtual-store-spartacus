@@ -8,7 +8,8 @@ import {
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatAutocompleteModule
  } from '@angular/material';
 import { ConfigModule, I18nModule, NotAuthGuard, UrlModule } from '@spartacus/core';
 import { SearchConsultantComponent } from './belcorp-search-consultant.component';
@@ -26,6 +27,7 @@ import { SearchConsultantComponent } from './belcorp-search-consultant.component
     MatButtonModule,
     MatSelectModule,
     MatIconModule,
+    MatAutocompleteModule,
     ConfigModule.withConfig({
       cmsComponents: {
         BelcorpSearchConsultantComponent: {

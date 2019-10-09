@@ -14,11 +14,11 @@
                 <mat-radio-button>Dados Personales</mat-radio-button>
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <form>
+            <form [formGroup]="searchConsultantFormBasicsInformations">
               <div class="form-group">
                 <label>
                   <mat-form-field class="cx-register__session--input">
-                    <input matInput type="text" name="firstname"
+                    <input matInput type="text" name="firstname" formControlName="firstname"
                       placeholder="{{ 'register.firstName.placeholder' | cxTranslate }}" />
                   </mat-form-field>
                 </label>
@@ -26,18 +26,20 @@
               <div class="form-group">
                 <label>
                   <mat-form-field class="cx-register__session--input">
-                    <input matInput type="text" name="lastname"
+                    <input matInput type="text" name="lastname" formControlName="lastname"
                       placeholder="{{ 'register.lastName.placeholder' | cxTranslate }}" />
                   </mat-form-field>
                 </label>
               </div>
-              <div class="form-group">
-                <label>
-                  <mat-form-field class="cx-register__session--input">
-                    <input matInput type="text" name="Distrito" placeholder="Distrito" />
-                  </mat-form-field>
-                </label>
-              </div>
+               <mat-form-field class="example-full-width">
+                  <input type="text" placeholder="Distrito" name="distrito" formControlName="distrito" matInput 
+                  [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
 
               <button type="submit" (click)="submit()" class="btn btn-block cx-customer__select--btn">
                 Buscar consultora
