@@ -9,7 +9,7 @@ cx-breadcrumb {
   justify-content: center;
   align-items: center;
 
-  nav{
+  nav {
     width: 62rem;
     text-align: left;
     padding: 0.3125rem 0.625rem;
@@ -23,6 +23,17 @@ cx-breadcrumb {
     @media screen and (max-width: 991px) {
       width: 100%;
       
+    }
+    span {
+      @media screen and (max-width: 991px) {
+        display: none;
+          + span {
+             + span {
+              display: block;
+          }
+        }
+      }
+ 
     }
   }
 
