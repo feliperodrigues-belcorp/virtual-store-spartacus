@@ -15,9 +15,6 @@ import { BelcorpAddressBookComponent } from './belcorp/components/belcorp-addres
 import { BelcorpAddressCardComponent } from './belcorp/components/belcorp-address-book/belcorp-address-card/belcorp-address-card.component';
 import { BelcorpAddressFormComponent } from './belcorp/components/belcorp-address-form/belcorp-address-form.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
-import { BelcorpMyaccountAddressBookCardComponent } from './belcorp/components/belcorp-myaccount-address-book/belcorp-myaccount-address-book-card/belcorp-myaccount-address-book-card.component';
-import { BelcorpMyaccountAddressBookComponent } from './belcorp/components/belcorp-myaccount-address-book/belcorp-myaccount-address-book.component';
-import { BelcorpMyaccountAddressFormComponent } from './belcorp/components/belcorp-myaccount-address-form/belcorp-myaccount-address-form.component';
 import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
@@ -29,9 +26,6 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
       BelcorpLoginFormComponent,
       BelcorpRegisterComponent,
       BelcorpPasswordComponent,
-      BelcorpMyaccountAddressBookComponent,
-      BelcorpMyaccountAddressBookCardComponent,
-      BelcorpMyaccountAddressFormComponent,
       BelcorpAddressBookComponent,
       BelcorpAddressCardComponent,
       BelcorpAddressFormComponent],
