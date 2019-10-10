@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { SearchConsultant } from '../../core/src/model/belcorp-search-consultant.model';
 import { SearchConsultantService } from '../../core/src/services/belcorp-search-consultant.service';
 
@@ -15,10 +14,13 @@ import { SearchConsultantService } from '../../core/src/services/belcorp-search-
 export class SearchConsultantComponent implements OnInit {
   public forState: any;
   public searchConsultant: Observable<SearchConsultant[]>;
-  searchConsultantFormBasicsInformations: FormGroup;
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
-  myControl = new FormControl();
+  public searchConsultantSubmit: SearchConsultant;
+  public searchConsultantFormPerson: FormGroup;
+  public searchConsultantFormCode: FormGroup;
+  public searchConsultantFormPhone: FormGroup;
+  public loading = false;
+  public showMe = true;
+  public consultProfile: any;
 
   constructor(private searchConsultantService: SearchConsultantService, private formBuilder: FormBuilder) {
     this.searchConsultantService = searchConsultantService;
@@ -26,18 +28,35 @@ export class SearchConsultantComponent implements OnInit {
 
   ngOnInit() {
     this.getUbigeo();
-    this.searchConsultantFormBasicsInformations = this.formBuilder.group({
+    this.creationForms();
+  }
+
+  public creationForms() {
+    this.createFormPerson();
+    this.createFormCode();
+    this.createFormPhone();
+  }
+
+  public createFormPerson() {
+    this.searchConsultantFormPerson = this.formBuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       distrito: ['', Validators.required]
     });
-
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
   }
+
+  public createFormCode() {
+    this.searchConsultantFormCode = this.formBuilder.group({
+      code: ['', Validators.required]
+    });
+  }
+
+  public createFormPhone() {
+    this.searchConsultantFormPhone = this.formBuilder.group({
+      phone: ['', Validators.required]
+    });
+  }
+
 
   private getUbigeo() {
     this.searchConsultantService.getUbigeo().subscribe((data) => {
@@ -46,12 +65,42 @@ export class SearchConsultantComponent implements OnInit {
     });
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  public submitPersonales() {
+    this.loading = true;
+    const type = 'PERSON';
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe((next) => {
+      console.log(next);
+      this.consultProfile = next;
+      this.loading = false;
+      this.showMe = false;
+    });
   }
-  public submit() {
-    this.searchConsultant = this.searchConsultantService.getSearchConsultant(this.searchConsultantFormBasicsInformations.controls);
+
+  public submitCode() {
+    this.loading = true;
+    const type = 'CODE';
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe((next) => {
+      console.log(next);
+      this.consultProfile = next;
+      this.loading = false;
+      this.showMe = false;
+    });
+  }
+
+  public submitPhone() {
+    this.loading = true;
+    const type = 'PHONE';
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe((next) => {
+      console.log(next);
+      this.consultProfile = next;
+      this.loading = false;
+      this.showMe = false;
+    });
+  }
+
+  public showMeReverse() {
+    this.showMe = true;
+    this.creationForms();
   }
 
 }
