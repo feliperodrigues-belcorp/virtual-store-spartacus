@@ -1,21 +1,34 @@
+
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
 import { NgxMaskModule } from 'ngx-mask';
 import { AppComponent } from './app.component';
+import { BelcorpAddressBookComponent } from './belcorp/components/belcorp-address-book/belcorp-address-book.component';
+import { BelcorpAddressCardComponent } from './belcorp/components/belcorp-address-book/belcorp-address-card/belcorp-address-card.component';
+import { BelcorpAddressFormComponent } from './belcorp/components/belcorp-address-form/belcorp-address-form.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
 import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
+
 @NgModule({
-  declarations: [AppComponent, BelcorpLoginFormComponent, BelcorpRegisterComponent, BelcorpPasswordComponent],
+  declarations:
+    [AppComponent,
+      BelcorpLoginFormComponent,
+      BelcorpRegisterComponent,
+      BelcorpPasswordComponent,
+      BelcorpAddressBookComponent,
+      BelcorpAddressCardComponent,
+      BelcorpAddressFormComponent],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
@@ -23,6 +36,17 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
           baseUrl: 'https://keyrusbelcorp.com',
           prefix: '/belcorpws/v2/',
           legacy: false,
+        },
+      },
+      checkout: {
+        express: true,
+        guest: true
+      },
+      view: {
+        infiniteScroll: {
+          active: true,
+          productLimit: 500,
+          showMoreButton: false,
         },
       },
       context: {
@@ -79,6 +103,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     BrowserAnimationsModule,
     MatExpansionModule,
     MatRadioModule,
+    NgSelectModule
   ],
   bootstrap: [AppComponent],
 })
