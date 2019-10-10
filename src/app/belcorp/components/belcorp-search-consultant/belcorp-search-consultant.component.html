@@ -31,15 +31,15 @@
                   </mat-form-field>
                 </label>
               </div>
-               <mat-form-field class="example-full-width">
-                  <input type="text" placeholder="Distrito" name="distrito" formControlName="distrito" matInput 
+              <mat-form-field class="example-full-width">
+                <input type="text" placeholder="Distrito" name="distrito" formControlName="distrito" matInput
                   [formControl]="myControl" [matAutocomplete]="auto">
-                  <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                      {{option}}
-                    </mat-option>
-                  </mat-autocomplete>
-                </mat-form-field>
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let forState of forStates" [value]="forStates.code">
+                    {{forStates.geographical_unit_2}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
 
               <button type="submit" (click)="submit()" class="btn btn-block cx-customer__select--btn">
                 Buscar consultora
@@ -91,7 +91,7 @@
   </div>
 </div>
 
-<div class="cx-consultant" style="display: none">
+<div class="cx-consultant">
   <div class="container">
     <div>
       <h1>Encuentra a tu consultora</h1>
