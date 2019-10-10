@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { AuthRedirectService, AuthService, GlobalMessageService, WindowRef } from '@spartacus/core';
-import { CheckoutConfigService, LoginFormComponent } from '@spartacus/storefront';
+import { LoginFormComponent } from '@spartacus/storefront';
 
 @Component({
   selector: 'app-belcorp-login-form',
@@ -16,10 +15,8 @@ export class BelcorpLoginFormComponent extends LoginFormComponent {
     globalMessageService: GlobalMessageService,
     fb: FormBuilder,
     authRedirectService: AuthRedirectService,
-    winRef: WindowRef,
-    activatedRoute: ActivatedRoute,
-    checkoutConfigService: CheckoutConfigService
+    winRef: WindowRef
   ) {
-    super(auth, globalMessageService, fb, authRedirectService, winRef, activatedRoute, checkoutConfigService);
+    super(auth, globalMessageService, fb, authRedirectService, winRef);
   }
 }
