@@ -1,0 +1,8 @@
+<a [attr.aria-label]="
+    'miniCart.item' | cxTranslate: { count: quantity$ | async }
+  " [routerLink]="{ cxRoute: 'cart' } | cxUrl">
+  <app-belcorp-icon [type]="iconTypes.CART"></app-belcorp-icon>
+
+  <!-- <span class="total">{{ total$ | async }}</span> -->
+  <span class="count">{{ quantity$ | async }}</span>
+</a>

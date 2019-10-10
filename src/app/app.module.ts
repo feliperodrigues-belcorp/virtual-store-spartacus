@@ -14,7 +14,9 @@ import { AppComponent } from './app.component';
 import { BelcorpAddressBookComponent } from './belcorp/components/belcorp-address-book/belcorp-address-book.component';
 import { BelcorpAddressCardComponent } from './belcorp/components/belcorp-address-book/belcorp-address-card/belcorp-address-card.component';
 import { BelcorpAddressFormComponent } from './belcorp/components/belcorp-address-form/belcorp-address-form.component';
+import { BelcorpIconComponent } from './belcorp/components/belcorp-icon/belcorp-icon.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
+import { BelcorpMiniCartComponent } from './belcorp/components/belcorp-mini-cart/belcorp-mini-cart.component';
 import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
@@ -28,7 +30,9 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
       BelcorpPasswordComponent,
       BelcorpAddressBookComponent,
       BelcorpAddressCardComponent,
-      BelcorpAddressFormComponent],
+      BelcorpAddressFormComponent,
+      BelcorpMiniCartComponent,
+      BelcorpIconComponent],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
