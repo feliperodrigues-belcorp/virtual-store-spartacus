@@ -1,3 +1,9 @@
 export const environment = {
-  production: true
+  production: true,
+  target: 'URL',
+  envName: 'production',
+  version: {
+    hash: 'LOCAL',
+    tag: 'LOCAL'
+  }
 };

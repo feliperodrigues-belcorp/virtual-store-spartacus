@@ -29,6 +29,13 @@ export class SearchConsultantComponent implements OnInit {
   ngOnInit() {
     this.getUbigeo();
     this.creationForms();
+    this.getToken();
+  }
+
+  private getToken() {
+    this.searchConsultantService.getBelcorpToken().subscribe((data) => {
+      console.log(data);
+    })
   }
 
   public creationForms() {
@@ -59,7 +66,6 @@ export class SearchConsultantComponent implements OnInit {
 
   private getUbigeo() {
     this.searchConsultantService.getUbigeo().subscribe(data => {
-      console.log(data);
       this.forState = data;
     });
   }
@@ -69,7 +75,6 @@ export class SearchConsultantComponent implements OnInit {
     this.loading = true;
     const type = 'PERSON';
     this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe(next => {
-      console.log(next);
       if (next.length <= 0) {
         this.warning = true;
       } else {
@@ -87,7 +92,6 @@ export class SearchConsultantComponent implements OnInit {
     this.loading = true;
     const type = 'CODE';
     this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe(next => {
-      console.log(next);
       if (next.length <= 0) {
         this.warning = true;
       } else {
@@ -105,7 +109,6 @@ export class SearchConsultantComponent implements OnInit {
     this.loading = true;
     const type = 'PHONE';
     this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe(next => {
-      console.log(next);
       if (next.length <= 0) {
         this.warning = true;
       } else {

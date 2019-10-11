@@ -1,12 +1,18 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { OccEndpointsService } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SearchConsultant, SearchUbigeo } from '../model/belcorp-search-consultant.model';
 
 @Injectable()
 export class SearchConsultantService {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private occEndpointService: OccEndpointsService) { }
+
+    public getBelcorpToken(): Observable<any> {
+        const header = new HttpHeaders({ 'Content-Type': 'application' });
+        return this.http.get(`${this.occEndpointService.getUrl('/consultant/oauth/token')}`);
+    }
 
     public getSearchConsultant(form: any, type: string): Observable<SearchConsultant[]> {
         const token =
