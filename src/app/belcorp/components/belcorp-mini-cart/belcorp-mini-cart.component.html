@@ -4,5 +4,9 @@
   <app-belcorp-icon [type]="iconTypes.CART"></app-belcorp-icon>
 
   <!-- <span class="total">{{ total$ | async }}</span> -->
-  <span class="count">{{ quantity$ | async }}</span>
+  <span class="count" *ngIf=" ( quantity$ | async ) > 99;else cartMoreThan99">
+    +99
+  </span>
+  <ng-template #cartMoreThan99><span class="count"> {{ quantity$ | async }} </span></ng-template>
+
 </a>

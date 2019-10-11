@@ -20,6 +20,8 @@ export class BelcorpMiniCartComponent extends MiniCartComponent {
   quantity$: Observable<number> = this.cartService.getActive().pipe(
     startWith({ deliveryItemsQuantity: 0 }),
     map(cart => cart.deliveryItemsQuantity || 0)
+
   );
+
 
 }
