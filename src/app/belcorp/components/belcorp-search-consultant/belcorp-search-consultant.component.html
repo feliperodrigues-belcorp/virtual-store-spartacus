@@ -8,6 +8,10 @@
         <h1>Encuentra a tu consultora</h1>
         <section *ngIf="!loading">
           <p>Selecciona el medio de búsqueda</p>
+          <div class="cx-customer__warning" *ngIf="warning">
+            <p>Lo sentimos, no tenemos resultados de tu búsqueda. Revisa los datos que ingresaste y vuelve a intentarlo.
+            </p>
+          </div>
           <mat-accordion>
             <mat-expansion-panel class="cx-customer__select">
               <mat-expansion-panel-header>
@@ -34,7 +38,7 @@
                 </div>
                 <mat-form-field class="example-full-width">
                   <mat-label>Distrito</mat-label>
-                  <mat-select name="distrito" formControlName="distrito" required>
+                  <mat-select name="distrito" formControlName="distrito">
                     <mat-option *ngFor="let forStates of forState" [value]="forStates.code">
                       {{forStates.geographical_unit_2}}
                     </mat-option>

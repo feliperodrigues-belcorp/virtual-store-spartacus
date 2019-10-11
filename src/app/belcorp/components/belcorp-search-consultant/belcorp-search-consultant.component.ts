@@ -20,6 +20,7 @@ export class SearchConsultantComponent implements OnInit {
   public loading = false;
   public showMe = true;
   public consultProfile: any;
+  public warning = false;
 
   constructor(private searchConsultantService: SearchConsultantService, private formBuilder: FormBuilder) {
     this.searchConsultantService = searchConsultantService;
@@ -40,7 +41,7 @@ export class SearchConsultantComponent implements OnInit {
     this.searchConsultantFormPerson = this.formBuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      distrito: ['', Validators.required],
+      distrito: [''],
     });
   }
 
@@ -64,39 +65,61 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   public submitPersonales() {
+    this.warning = false;
     this.loading = true;
     const type = 'PERSON';
     this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe(next => {
       console.log(next);
+      if (next.length <= 0) {
+        this.warning = true;
+      } else {
+        this.showMe = false;
+      }
       this.consultProfile = next;
       this.loading = false;
-      this.showMe = false;
+    }, error => {
+      this.loading = false;
     });
   }
 
   public submitCode() {
+    this.warning = false;
     this.loading = true;
     const type = 'CODE';
     this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe(next => {
       console.log(next);
+      if (next.length <= 0) {
+        this.warning = true;
+      } else {
+        this.showMe = false;
+      }
       this.consultProfile = next;
       this.loading = false;
-      this.showMe = false;
+    }, error => {
+      this.loading = false;
     });
   }
 
   public submitPhone() {
+    this.warning = false;
     this.loading = true;
     const type = 'PHONE';
     this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe(next => {
       console.log(next);
+      if (next.length <= 0) {
+        this.warning = true;
+      } else {
+        this.showMe = false;
+      }
       this.consultProfile = next;
       this.loading = false;
-      this.showMe = false;
+    }, error => {
+      this.loading = false;
     });
   }
 
   public showMeReverse() {
+    this.warning = false;
     this.showMe = true;
     this.creationForms();
   }
