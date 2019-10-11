@@ -8,9 +8,8 @@ import { SearchConsultantService } from '../../core/src/services/belcorp-search-
   selector: 'app-belcorp-search-consultant',
   templateUrl: './belcorp-search-consultant.component.html',
   styleUrls: ['./belcorp-search-consultant.component.scss'],
-  providers: [SearchConsultantService]
+  providers: [SearchConsultantService],
 })
-
 export class SearchConsultantComponent implements OnInit {
   public forState: any;
   public searchConsultant: Observable<SearchConsultant[]>;
@@ -41,25 +40,24 @@ export class SearchConsultantComponent implements OnInit {
     this.searchConsultantFormPerson = this.formBuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      distrito: ['', Validators.required]
+      distrito: ['', Validators.required],
     });
   }
 
   public createFormCode() {
     this.searchConsultantFormCode = this.formBuilder.group({
-      code: ['', Validators.required]
+      code: ['', Validators.required],
     });
   }
 
   public createFormPhone() {
     this.searchConsultantFormPhone = this.formBuilder.group({
-      phone: ['', Validators.required]
+      phone: ['', Validators.required],
     });
   }
 
-
   private getUbigeo() {
-    this.searchConsultantService.getUbigeo().subscribe((data) => {
+    this.searchConsultantService.getUbigeo().subscribe(data => {
       console.log(data);
       this.forState = data;
     });
@@ -68,7 +66,7 @@ export class SearchConsultantComponent implements OnInit {
   public submitPersonales() {
     this.loading = true;
     const type = 'PERSON';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe((next) => {
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe(next => {
       console.log(next);
       this.consultProfile = next;
       this.loading = false;
@@ -79,7 +77,7 @@ export class SearchConsultantComponent implements OnInit {
   public submitCode() {
     this.loading = true;
     const type = 'CODE';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe((next) => {
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe(next => {
       console.log(next);
       this.consultProfile = next;
       this.loading = false;
@@ -90,7 +88,7 @@ export class SearchConsultantComponent implements OnInit {
   public submitPhone() {
     this.loading = true;
     const type = 'PHONE';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe((next) => {
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe(next => {
       console.log(next);
       this.consultProfile = next;
       this.loading = false;
@@ -102,5 +100,4 @@ export class SearchConsultantComponent implements OnInit {
     this.showMe = true;
     this.creationForms();
   }
-
 }
