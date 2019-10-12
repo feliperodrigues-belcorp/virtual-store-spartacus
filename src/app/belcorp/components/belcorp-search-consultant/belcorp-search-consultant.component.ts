@@ -29,14 +29,16 @@ export class SearchConsultantComponent implements OnInit {
 
   ngOnInit() {
     this.getToken();
-    this.getUbigeo();
     this.creationForms();
   }
 
   private getToken() {
-    this.searchConsultantService.getBelcorpToken().subscribe(data => {
-      this.token = data;
-    });
+    this.searchConsultantService
+      .getBelcorpToken()
+      .subscribe(data => {
+        this.token = data;
+      })
+      .add(() => this.getUbigeo());
   }
 
   public creationForms() {
