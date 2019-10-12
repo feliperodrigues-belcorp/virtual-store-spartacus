@@ -21,20 +21,21 @@ export class SearchConsultantComponent implements OnInit {
   public showMe = true;
   public consultProfile: any;
   public warning = false;
+  public token: string;
 
   constructor(private searchConsultantService: SearchConsultantService, private formBuilder: FormBuilder) {
     this.searchConsultantService = searchConsultantService;
   }
 
   ngOnInit() {
+    this.getToken();
     this.getUbigeo();
     this.creationForms();
-    this.getToken();
   }
 
   private getToken() {
     this.searchConsultantService.getBelcorpToken().subscribe(data => {
-      console.log(data);
+      this.token = data;
     });
   }
 
@@ -65,7 +66,7 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   private getUbigeo() {
-    this.searchConsultantService.getUbigeo().subscribe(data => {
+    this.searchConsultantService.getUbigeo(this.token).subscribe(data => {
       this.forState = data;
     });
   }
@@ -74,7 +75,7 @@ export class SearchConsultantComponent implements OnInit {
     this.warning = false;
     this.loading = true;
     const type = 'PERSON';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe(
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type, this.token).subscribe(
       next => {
         if (next.length <= 0) {
           this.warning = true;
@@ -94,7 +95,7 @@ export class SearchConsultantComponent implements OnInit {
     this.warning = false;
     this.loading = true;
     const type = 'CODE';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe(
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type, this.token).subscribe(
       next => {
         if (next.length <= 0) {
           this.warning = true;
@@ -114,7 +115,7 @@ export class SearchConsultantComponent implements OnInit {
     this.warning = false;
     this.loading = true;
     const type = 'PHONE';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe(
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type, this.token).subscribe(
       next => {
         if (next.length <= 0) {
           this.warning = true;

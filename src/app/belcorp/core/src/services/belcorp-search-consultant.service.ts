@@ -22,9 +22,7 @@ export class SearchConsultantService {
     });
   }
 
-  public getSearchConsultant(form: any, type: string): Observable<SearchConsultant[]> {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAyMywidXNyIjoiYXBwVlMiLCJpYXQiOjE1NzA4MTgyMjcsImV4cCI6MTU3MDkwNDYyN30.XZki6NBnmnWIF-vrld7_h2EnMTSaYzujFzFEAgCAx_A';
+  public getSearchConsultant(form: any, type: string, token: string): Observable<SearchConsultant[]> {
     const header = new HttpHeaders({ 'Content-Type': 'application', 'x-access-token': token });
     let params;
     if (type === 'PERSON') {
@@ -51,9 +49,7 @@ export class SearchConsultantService {
     );
   }
 
-  public getUbigeo(): Observable<SearchUbigeo[]> {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAyMywidXNyIjoiYXBwVlMiLCJpYXQiOjE1NzA4MTgyMjcsImV4cCI6MTU3MDkwNDYyN30.XZki6NBnmnWIF-vrld7_h2EnMTSaYzujFzFEAgCAx_A';
+  public getUbigeo(token: string): Observable<SearchUbigeo[]> {
     const header = new HttpHeaders({ 'Content-Type': 'application', 'x-access-token': token });
     return this.http
       .get<SearchUbigeo[]>('https://api-qa.belcorp.biz/countries/PE?show_ubigeo=true', { headers: header })
