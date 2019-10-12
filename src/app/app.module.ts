@@ -1,7 +1,13 @@
-
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatInputModule,
+  MatRadioModule,
+  MatSelectModule,
+} from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -19,16 +25,16 @@ import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
-
 @NgModule({
-  declarations:
-    [AppComponent,
-      BelcorpLoginFormComponent,
-      BelcorpRegisterComponent,
-      BelcorpPasswordComponent,
-      BelcorpAddressBookComponent,
-      BelcorpAddressCardComponent,
-      BelcorpAddressFormComponent],
+  declarations: [
+    AppComponent,
+    BelcorpLoginFormComponent,
+    BelcorpRegisterComponent,
+    BelcorpPasswordComponent,
+    BelcorpAddressBookComponent,
+    BelcorpAddressCardComponent,
+    BelcorpAddressFormComponent,
+  ],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
@@ -38,9 +44,13 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
           legacy: false,
         },
       },
+      authentication: {
+        client_id: 'belcorp_esb',
+        client_secret: 'secret',
+      },
       checkout: {
         express: true,
-        guest: true
+        guest: true,
       },
       view: {
         infiniteScroll: {
@@ -103,8 +113,8 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     BrowserAnimationsModule,
     MatExpansionModule,
     MatRadioModule,
-    NgSelectModule
+    NgSelectModule,
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

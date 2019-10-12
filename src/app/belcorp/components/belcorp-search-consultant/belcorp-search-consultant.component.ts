@@ -33,9 +33,9 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   private getToken() {
-    this.searchConsultantService.getBelcorpToken().subscribe((data) => {
+    this.searchConsultantService.getBelcorpToken().subscribe(data => {
       console.log(data);
-    })
+    });
   }
 
   public creationForms() {
@@ -74,51 +74,60 @@ export class SearchConsultantComponent implements OnInit {
     this.warning = false;
     this.loading = true;
     const type = 'PERSON';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe(next => {
-      if (next.length <= 0) {
-        this.warning = true;
-      } else {
-        this.showMe = false;
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPerson.value, type).subscribe(
+      next => {
+        if (next.length <= 0) {
+          this.warning = true;
+        } else {
+          this.showMe = false;
+        }
+        this.consultProfile = next;
+        this.loading = false;
+      },
+      error => {
+        this.loading = false;
       }
-      this.consultProfile = next;
-      this.loading = false;
-    }, error => {
-      this.loading = false;
-    });
+    );
   }
 
   public submitCode() {
     this.warning = false;
     this.loading = true;
     const type = 'CODE';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe(next => {
-      if (next.length <= 0) {
-        this.warning = true;
-      } else {
-        this.showMe = false;
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormCode.value, type).subscribe(
+      next => {
+        if (next.length <= 0) {
+          this.warning = true;
+        } else {
+          this.showMe = false;
+        }
+        this.consultProfile = next;
+        this.loading = false;
+      },
+      error => {
+        this.loading = false;
       }
-      this.consultProfile = next;
-      this.loading = false;
-    }, error => {
-      this.loading = false;
-    });
+    );
   }
 
   public submitPhone() {
     this.warning = false;
     this.loading = true;
     const type = 'PHONE';
-    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe(next => {
-      if (next.length <= 0) {
-        this.warning = true;
-      } else {
-        this.showMe = false;
+    this.searchConsultantService.getSearchConsultant(this.searchConsultantFormPhone.value, type).subscribe(
+      next => {
+        if (next.length <= 0) {
+          this.warning = true;
+        } else {
+          this.showMe = false;
+        }
+        this.consultProfile = next;
+        this.loading = false;
+      },
+      error => {
+        this.loading = false;
       }
-      this.consultProfile = next;
-      this.loading = false;
-    }, error => {
-      this.loading = false;
-    });
+    );
   }
 
   public showMeReverse() {
