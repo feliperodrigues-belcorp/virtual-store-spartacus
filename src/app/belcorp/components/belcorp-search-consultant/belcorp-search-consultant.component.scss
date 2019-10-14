@@ -30,6 +30,10 @@
     padding-top: 0.625rem;
   }
 
+  &__radio{
+    width: 100%;
+  }
+
   &__danger {
     background: #FFDDDD;
     border: 0.5px solid #D20000;
@@ -64,6 +68,7 @@
   &__select {
     margin-bottom: 0.625rem;
 
+
     &--text {
       padding-top: 0.3125rem;
       font-style: normal;
@@ -78,7 +83,7 @@
 
       @media screen and (max-width: 991px) {
         padding: 0;
-
+      
       }
     }
 
@@ -117,6 +122,7 @@
 }
 
 .cx-consultant {
+
   margin-top: 3.125rem;
 
   &__container {
@@ -137,6 +143,7 @@
       text-align: center;
       font-size: 1.2rem;
       max-width: 250px;
+    
     }
   }
 
@@ -174,7 +181,15 @@
 
     @media screen and (max-width: 991px) {
       width: 100%;
+      border: 0;
 
+    }
+
+    &--body {
+      @media screen and (max-width: 991px) {
+        text-align: right;
+        padding: 0;
+      }
     }
 
     &--img {
@@ -182,12 +197,31 @@
       margin: 0 auto;
       width: 50%;
       text-align: center;
+
+      @media screen and (max-width: 991px) {
+        padding-bottom: 10px;
+        width: 100%;
+      }
+
+    }
+
+    &--mobile {
+      @media screen and (max-width: 991px) {
+       padding-left:0;
+       padding-top: 5px; 
+       padding-bottom: 5px;
+      }
     }
 
     &--div {
       width: 5rem;
       height: 5rem;
       border-radius: 50%;
+
+      @media screen and (max-width: 991px) {
+        width: 48px;
+        height: 48px;
+      }
     }
 
     &--title {
@@ -199,13 +233,33 @@
       color: var(--cx-color-text);
       border: 0;
       margin: 0;
+
+      @media screen and (max-width: 991px) {
+        text-align: left;
+      }
     }
 
     &--paragraf {
       text-align: center;
       padding: 0;
-    }
 
+      @media screen and (max-width: 991px) {
+        text-align: left;
+        padding-top: 0!important;
+      }
+    }
+    
+    &--row {
+      @media screen and (max-width: 991px) {
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        border:0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    
   }
 
   &__search {
@@ -238,3 +292,7 @@
   }
 
 }
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #B9007E;
+ }

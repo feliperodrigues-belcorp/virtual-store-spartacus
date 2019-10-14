@@ -16,7 +16,7 @@
             <mat-expansion-panel class="cx-customer__select">
               <mat-expansion-panel-header>
                 <mat-panel-title class="cx-customer__select--text">
-                  <mat-radio-button>Dados Personales</mat-radio-button>
+                  <mat-radio-button class="cx-customer__radio">Dados Personales</mat-radio-button>
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <form [formGroup]="searchConsultantFormPerson">
@@ -54,7 +54,7 @@
             <mat-expansion-panel class="cx-customer__select">
               <mat-expansion-panel-header>
                 <mat-panel-title class="cx-customer__select--text">
-                  <mat-radio-button> Código</mat-radio-button>
+                  <mat-radio-button class="cx-customer__radio"> Código</mat-radio-button>
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <form [formGroup]="searchConsultantFormCode">
@@ -73,7 +73,7 @@
             <mat-expansion-panel class="cx-customer__select">
               <mat-expansion-panel-header>
                 <mat-panel-title class="cx-customer__select--text">
-                  <mat-radio-button>Celular</mat-radio-button>
+                  <mat-radio-button class="cx-customer__radio">Celular</mat-radio-button>
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <form [formGroup]="searchConsultantFormPhone">
@@ -112,14 +112,20 @@
     <div class="cx-consultant__container">
       <div class="card cx-consultant__card" *ngFor="let consults of consultProfile">
         <div (click)="sentConsultantToHybris(consults.consultant_code, consults.country_iso)">
-          <div class="cx-consultant__card--img">
-            <img class="card-img-top cx-consultant__card--div" src="https://pbs.twimg.com/media/DzKfUMMX0AEBu75.jpg"
-              alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title card cx-consultant__card--title">{{consults.first_name}}</h5>
-            <p class="card-text cx-consultant__card--paragraf">Tienda virtual de {{consults.first_name}}
-              {{consults.middle_name}}</p>
+          <div class="row cx-consultant__card--row">
+            <div class="col-sm-3 col-3 col-md-3 col-lg-12">
+              <div class="cx-consultant__card--img">
+                <img class="card-img-top cx-consultant__card--div" src="https://pbs.twimg.com/media/DzKfUMMX0AEBu75.jpg"
+                  alt="Card image cap">
+              </div>
+            </div>
+            <div class="col-sm-9 col-9 col-md-9 col-lg-12 cx-consultant__card--mobile">
+              <div class="card-body cx-consultant__card--body">
+                <h5 class="card-title card cx-consultant__card--title">{{consults.first_name}}</h5>
+                <p class="card-text cx-consultant__card--paragraf">Tienda virtual de {{consults.first_name}}
+                  {{consults.middle_name}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
