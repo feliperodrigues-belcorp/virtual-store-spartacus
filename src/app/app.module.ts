@@ -14,10 +14,16 @@ import { AppComponent } from './app.component';
 import { BelcorpAddressBookComponent } from './belcorp/components/belcorp-address-book/belcorp-address-book.component';
 import { BelcorpAddressCardComponent } from './belcorp/components/belcorp-address-book/belcorp-address-card/belcorp-address-card.component';
 import { BelcorpAddressFormComponent } from './belcorp/components/belcorp-address-form/belcorp-address-form.component';
+import { BelcorpCartDetailsComponent } from './belcorp/components/belcorp-cart-details/belcorp-cart-details.component';
+import { BelcorpCartItemListComponent } from './belcorp/components/belcorp-cart-item-list/belcorp-cart-item-list.component';
+import { BelcorpCartItemComponent } from './belcorp/components/belcorp-cart-item/belcorp-cart-item.component';
 import { BelcorpIconComponent } from './belcorp/components/belcorp-icon/belcorp-icon.component';
+import { BelcorpItemCounterComponent } from './belcorp/components/belcorp-item-counter/belcorp-item-counter.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
+import { BelcorpMediaComponent } from './belcorp/components/belcorp-media/belcorp-media.component';
 import { BelcorpMiniCartComponent } from './belcorp/components/belcorp-mini-cart/belcorp-mini-cart.component';
 import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
+import { BelcorpPromotionsComponent } from './belcorp/components/belcorp-promotions/belcorp-promotions.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
@@ -32,7 +38,13 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
       BelcorpAddressCardComponent,
       BelcorpAddressFormComponent,
       BelcorpMiniCartComponent,
-      BelcorpIconComponent],
+      BelcorpIconComponent,
+      BelcorpItemCounterComponent,
+      BelcorpCartDetailsComponent,
+      BelcorpPromotionsComponent,
+      BelcorpCartItemListComponent,
+      BelcorpCartItemComponent,
+      BelcorpMediaComponent],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {

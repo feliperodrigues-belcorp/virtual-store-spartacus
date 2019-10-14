@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from '@spartacus/core';
 import { MiniCartComponent } from '@spartacus/storefront';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-belcorp-mini-cart',
@@ -17,11 +15,6 @@ export class BelcorpMiniCartComponent extends MiniCartComponent {
     super(cartService);
   }
 
-  quantity$: Observable<number> = this.cartService.getActive().pipe(
-    startWith({ deliveryItemsQuantity: 0 }),
-    map(cart => cart.deliveryItemsQuantity || 0)
-
-  );
 
 
 }
