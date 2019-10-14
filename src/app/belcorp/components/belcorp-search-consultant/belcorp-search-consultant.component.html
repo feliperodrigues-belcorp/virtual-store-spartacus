@@ -45,7 +45,7 @@
                   </mat-select>
                 </mat-form-field>
 
-                <button type="submit" [disabled]="searchConsultantFormPerson.invalid" (click)="submitPersonales()"
+                <button type="button" [disabled]="searchConsultantFormPerson.invalid" (click)="submitPersonales()"
                   class="btn btn-block cx-customer__select--btn">
                   Buscar consultora
                 </button>
@@ -65,7 +65,7 @@
                     </mat-form-field>
                   </label>
                 </div>
-                <button type="submit" (click)="submitCode()" class="btn btn-block cx-customer__select--btn">
+                <button type="button" (click)="submitCode()" class="btn btn-block cx-customer__select--btn">
                   Buscar consultora
                 </button>
               </form>
@@ -84,15 +84,15 @@
                     </mat-form-field>
                   </label>
                 </div>
-                <button type="submit" (click)="submitPhone()" class="btn btn-block cx-customer__select--btn">
+                <button type="button" (click)="submitPhone()" class="btn btn-block cx-customer__select--btn">
                   Buscar consultora
                 </button>
               </form>
             </mat-expansion-panel>
           </mat-accordion>
         </section>
-        <section *ngIf="loading">
-          <mat-spinner color="primary"></mat-spinner>
+        <section *ngIf="loading" class="cx-consultant__section">
+          <mat-spinner class="cx-consultant__circle"></mat-spinner>
           <p>Espera un momento, estamos buscando tu consultora.</p>
         </section>
       </div>
@@ -105,22 +105,24 @@
     <div>
       <h1>Encuentra a tu consultora</h1>
       <div class="cx-consultant__select">
-        <h2 class="cx-consultant__select--text">1 consultora selecionada </h2>
+        <h2 class="cx-consultant__select--text">{{consultProfile.length}} consultora selecionada </h2>
       </div>
       <p>Selecciona la tienda de la consultora que quieres visitar.</p>
     </div>
-
-    <div class="card cx-consultant__card" *ngFor="let consults of consultProfile">
-      <div class="cx-consultant__card--img">
-        <img class="card-img-top cx-consultant__card--div" src="https://pbs.twimg.com/media/DzKfUMMX0AEBu75.jpg"
-          alt="Card image cap">
+    <div class="cx-consultant__container">
+      <div class="card cx-consultant__card" *ngFor="let consults of consultProfile">
+        <div (click)="sentConsultantToHybris(consults.consultant_code, consults.country_iso)">
+          <div class="cx-consultant__card--img">
+            <img class="card-img-top cx-consultant__card--div" src="https://pbs.twimg.com/media/DzKfUMMX0AEBu75.jpg"
+              alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title card cx-consultant__card--title">{{consults.first_name}}</h5>
+            <p class="card-text cx-consultant__card--paragraf">Tienda virtual de {{consults.first_name}}
+              {{consults.middle_name}}</p>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title card cx-consultant__card--title">{{consults.first_name}}</h5>
-        <p class="card-text cx-consultant__card--paragraf">Tienda virtual de {{consults.first_name}}
-          {{consults.middle_name}}</p>
-      </div>
-
     </div>
     <div class="cx-consultant__search">
       <button (click)="showMeReverse()" class="btn btn-block cx-customer__select--btn">

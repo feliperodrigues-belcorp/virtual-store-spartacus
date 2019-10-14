@@ -21,6 +21,7 @@ export class SearchConsultantComponent implements OnInit {
   public showMe = true;
   public consultProfile: any;
   public warning = false;
+  public showPopup = false;
   public token: string;
 
   constructor(private searchConsultantService: SearchConsultantService, private formBuilder: FormBuilder) {
@@ -129,6 +130,17 @@ export class SearchConsultantComponent implements OnInit {
       },
       error => {
         this.loading = false;
+      }
+    );
+  }
+
+  public sentConsultantToHybris(consult: string, country: string) {
+    this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
+      next => {
+        this.showMe = false;
+      },
+      error => {
+        this.showPopup = true;
       }
     );
   }
