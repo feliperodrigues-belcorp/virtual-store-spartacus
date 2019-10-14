@@ -65,7 +65,8 @@
                     </mat-form-field>
                   </label>
                 </div>
-                <button type="button" (click)="submitCode()" class="btn btn-block cx-customer__select--btn">
+                <button type="button" (click)="submitCode()" [disabled]="searchConsultantFormCode.invalid"
+                  class="btn btn-block cx-customer__select--btn">
                   Buscar consultora
                 </button>
               </form>
@@ -84,7 +85,8 @@
                     </mat-form-field>
                   </label>
                 </div>
-                <button type="button" (click)="submitPhone()" class="btn btn-block cx-customer__select--btn">
+                <button type="button" (click)="submitPhone()" [disabled]="searchConsultantFormPhone.invalid"
+                  class="btn btn-block cx-customer__select--btn">
                   Buscar consultora
                 </button>
               </form>

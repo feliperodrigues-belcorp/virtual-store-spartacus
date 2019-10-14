@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SearchConsultant } from '../../core/src/model/belcorp-search-consultant.model';
 import { SearchConsultantService } from '../../core/src/services/belcorp-search-consultant.service';
@@ -24,7 +25,11 @@ export class SearchConsultantComponent implements OnInit {
   public showPopup = false;
   public token: string;
 
-  constructor(private searchConsultantService: SearchConsultantService, private formBuilder: FormBuilder) {
+  constructor(
+    private searchConsultantService: SearchConsultantService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
     this.searchConsultantService = searchConsultantService;
   }
 
@@ -135,6 +140,7 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   public sentConsultantToHybris(consult: string, country: string) {
+    this.router.navigate(['/']);
     this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
       next => {
         this.showMe = false;
