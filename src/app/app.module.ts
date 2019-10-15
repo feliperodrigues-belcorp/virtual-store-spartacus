@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
@@ -27,7 +26,6 @@ import { BelcorpPromotionsComponent } from './belcorp/components/belcorp-promoti
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
-
 @NgModule({
   declarations:
     [AppComponent,
@@ -54,9 +52,13 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
           legacy: false,
         },
       },
+      authentication: {
+        client_id: 'belcorp_esb',
+        client_secret: 'secret',
+      },
       checkout: {
         express: true,
-        guest: true
+        guest: true,
       },
       view: {
         infiniteScroll: {
@@ -119,7 +121,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     BrowserAnimationsModule,
     MatExpansionModule,
     MatRadioModule,
-    NgSelectModule
+    NgSelectModule,
   ],
   bootstrap: [AppComponent],
 })

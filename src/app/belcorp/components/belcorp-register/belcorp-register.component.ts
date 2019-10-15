@@ -29,7 +29,6 @@ export class BelcorpRegisterComponent extends RegisterComponent {
   );
 
 
-
   constructor(
     auth: AuthService,
     authRedirectService: AuthRedirectService,
