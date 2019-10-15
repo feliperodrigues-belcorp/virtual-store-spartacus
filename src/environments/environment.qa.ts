@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
-  target: 'URL',
-  envName: 'develop',
+  target: 'https://api-qa.belcorp.biz/',
+  envName: 'automation',
   version: {
     hash: 'LOCAL',
     tag: 'LOCAL'

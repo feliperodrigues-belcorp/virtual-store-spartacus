@@ -37,7 +37,7 @@
     "shopAll": "Shop all {{ navNode}} >"
   },
   "searchBox": {
-    "placeholder": "Search here...",
+    "placeholder": "Busca tu producto",
     "help": {
       "insufficientChars": "Please type more characters",
       "noMatch": "We could not find any results",

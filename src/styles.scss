@@ -63,6 +63,7 @@ body {
     background: var(--cx-color-white);
 
   }
+
 }
 
 html,
@@ -86,3 +87,13 @@ body {
  .mat-radio-button.mat-accent .mat-radio-inner-circle {
    background-color: var(--cx-color-text);
  }
+
+ .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #B9007E;
+ }
+
+ app-belcorp-search-box {
+  position: absolute;
+  right: 40%;
+  z-index: 1;
+}

@@ -1,0 +1,13 @@
+<ng-container *ngIf="(cart$ | async) as cart">
+  <ng-container *ngIf="(entries$ | async) as entries">
+    <div class="cart-details-wrapper">
+      <div class="cx-total">
+        {{ 'cartDetails.cartName' | cxTranslate: { code: cart.code } }}
+      </div>
+      <app-belcorp-promotions [promotions]="getAllPromotionsForCart(cart)"></app-belcorp-promotions>
+      <app-belcorp-cart-item-list [items]="entries" [potentialProductPromotions]="cart.potentialProductPromotions"
+        [cartIsLoading]="!(cartLoaded$ | async)"></app-belcorp-cart-item-list>
+      <!-- NOT FOR MVP  <cx-cart-coupon></cx-cart-coupon> -->
+    </div>
+  </ng-container>
+</ng-container>

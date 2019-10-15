@@ -1,148 +1,230 @@
-
 .cx-customer {
-    
+
   .container {
     max-width: 62rem;
-
   }
-    img {
-      width: 30.5rem;
-      height: 22.8125rem;
-       
-       @media screen and (max-width: 991px) {
-         width: 100%;
-       }
+
+  img {
+    width: 30.5rem;
+    height: 22.8125rem;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
     }
-    
-    h1 {
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: #808080;
+    padding-top: 0.625rem;
+  }
+
+  &__radio{
+    width: 100%;
+  }
+
+  &__danger {
+    background: #FFDDDD;
+    border: 0.5px solid #D20000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    color: #D20000;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__warning {
+    background: #E8FBFF;
+    border: 0.5px solid #1490A8;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    p {
+      font-family: Lato;
+      font-size: 16px;
+      line-height: 17px;
+      letter-spacing: 0.2px;
+      color: #1490A8;
+      padding: 14px;
+      margin: 0;
+    }
+  }
+
+  &__select {
+    margin-bottom: 0.625rem;
+
+
+    &--text {
+      padding-top: 0.3125rem;
       font-style: normal;
       font-weight: bold;
-      font-size: 1.25rem;
-      line-height: 1.5rem;
-      margin-top: 2.5rem;
-    }
-  
-    p {
-      font-style: normal;
-      font-weight: normal;
       font-size: 0.875rem;
       line-height: 1.0625rem;
-      color: #808080;
-      padding-top:0.625rem;
-      }
-     
-     &__select {
-       margin-bottom: 0.625rem;
-       
-  
-        &--text {
-          padding-top: 0.3125rem;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 0.875rem;
-          line-height: 1.0625rem;
-  
-        }
-  
-        &--margin{
-          margin-bottom: 1.25rem;
-  
-          @media screen and (max-width: 991px) {
-            padding: 0;
-            
-          }
-        }
-         
-        &--btn {
-          background:var(--cx-color-text);
-          color: var(--cx-color-white);
-          font-size: 0.75rem;
-          line-height: 0.875rem;
-          font-weight: bold;
-          text-align: center;
-          letter-spacing: 0.0625rem;
-          width: 100%;
-          border-radius: 0.125rem;
-          cursor: pointer;
-    
-         }
-        
-     } 
-      
-     
-     .mat-expansion-indicator {
-      display: none;
-     }
-  
-     .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
-      background: var(--cx-color-white);
-     }
-  
-     .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-      border-color:var(--cx-color-text);
-     }
-  
-     .mat-radio-button.mat-accent .mat-radio-inner-circle {
-       background-color: var(--cx-color-text);
-     }
-  }
-  
-  .cx-consultant {
-    margin-top:3.125rem;
-    border-top:0.125rem solid var(--cx-color-text);
-  
-    &__display{
-      
+
+    }
+
+    &--margin {
+      margin-bottom: 1.25rem;
+
       @media screen and (max-width: 991px) {
-        display: none;
+        padding: 0;
+      
       }
     }
-  
-    &__select{
-      
-      width: 11.1875rem;
-      height: 1.5rem;
-      background: #C4C4C4;
-      border-radius: 1.25rem;
-      margin-bottom: 0.75rem;
+
+    &--btn {
+      background: var(--cx-color-text);
+      color: var(--cx-color-white);
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.0625rem;
+      width: 100%;
+      border-radius: 0.125rem;
+      cursor: pointer;
+
+    }
+
+  }
+
+
+  .mat-expansion-indicator {
+    display: none;
+  }
+
+  .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+    background: var(--cx-color-white);
+  }
+
+  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: var(--cx-color-text);
+  }
+
+  .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: var(--cx-color-text);
+  }
+}
+
+.cx-consultant {
+
+  margin-top: 3.125rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.5rem;
+
+    p {
+      font-family: Lato;
+      font-style: normal;
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 250px;
     
-      &--text { 
+    }
+  }
+
+  &__display {
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__select {
+    width: 11.1875rem;
+    height: 1.5rem;
+    background: #C4C4C4;
+    border-radius: 1.25rem;
+    margin-bottom: 0.75rem;
+
+    &--text {
       font-family: Lato;
       font-style: normal;
       font-weight: bold;
       font-size: 0.625rem;
       line-height: 0.75rem;
       text-transform: uppercase;
-      color:var(--cx-color-white);
+      color: var(--cx-color-white);
       padding-top: 0.3125rem;
       text-align: center;
-  
+
+    }
+  }
+
+  &__card {
+    width: 20rem;
+    margin-bottom: 1.875rem;
+    cursor: pointer;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      border: 0;
+
+    }
+
+    &--body {
+      @media screen and (max-width: 991px) {
+        text-align: right;
+        padding: 0;
       }
     }
-  
-    &__card {
-      width: 20rem;
-      margin-bottom: 1.875rem;
-  
-      @media screen and (max-width: 991px) {
-        width: 100%;
-        
-      }
-  
-      &--img {
+
+    &--img {
       padding-top: 0.625rem;
       margin: 0 auto;
       width: 50%;
       text-align: center;
+
+      @media screen and (max-width: 991px) {
+        padding-bottom: 10px;
+        width: 100%;
       }
-  
-      &--div{
+
+    }
+
+    &--mobile {
+      @media screen and (max-width: 991px) {
+       padding-left:0;
+       padding-top: 5px; 
+       padding-bottom: 5px;
+      }
+    }
+
+    &--div {
       width: 5rem;
       height: 5rem;
       border-radius: 50%;
+
+      @media screen and (max-width: 991px) {
+        width: 48px;
+        height: 48px;
       }
-  
-      &--title{
+    }
+
+    &--title {
       font-style: normal;
       font-weight: bold;
       font-size: 1rem;
@@ -150,43 +232,67 @@
       text-align: center;
       color: var(--cx-color-text);
       border: 0;
-      margin:0;
-      }
-  
-      &--paragraf{
-        text-align: center;
-        padding:0;
-      }
-  
-    } 
-  
-    &__search {
-      margin: 0 auto;
-      width: 20rem;
-      text-align: center;
-  
+      margin: 0;
+
       @media screen and (max-width: 991px) {
-        width: 100%;
-        
+        text-align: left;
       }
     }
-  
-    h1 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.25rem;
-      line-height: 1.5rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1.25rem;
-    }
-  
-    p {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 0.875rem;
-      line-height: 1.0625rem;
-      color: #808080;
-      padding-top:0.625rem;
+
+    &--paragraf {
+      text-align: center;
+      padding: 0;
+
+      @media screen and (max-width: 991px) {
+        text-align: left;
+        padding-top: 0!important;
       }
+    }
+    
+    &--row {
+      @media screen and (max-width: 991px) {
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        border:0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
     
   }
+
+  &__search {
+    margin: 0 auto;
+    width: 20rem;
+    text-align: center;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+
+    }
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    color: #808080;
+    padding-top: 0.625rem;
+  }
+
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #B9007E;
+ }
