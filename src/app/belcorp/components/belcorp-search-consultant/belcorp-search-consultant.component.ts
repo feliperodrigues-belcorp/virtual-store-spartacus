@@ -140,9 +140,10 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   public sentConsultantToHybris(consult: string, country: string) {
-    this.router.navigate(['/']);
     this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
       next => {
+        console.log(next.urlStore);
+        this.router.navigate([`/${next.urlStore}`]);
         this.showMe = false;
       },
       error => {
