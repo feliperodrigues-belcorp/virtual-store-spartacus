@@ -8,6 +8,7 @@
 
   &__icon {
      color: #000!important;
+     cursor: pointer;
    }
 
  &__input {
@@ -32,7 +33,6 @@ label.cx-searchbox .reset {
 }
 
  .cx-suggestions {
-  display: flex;
    flex-wrap: wrap;
    background: white;
 
@@ -43,12 +43,22 @@ label.cx-searchbox .reset {
       height: 30px;
     }
 
+
+    &__busqueda {
+      background: #D8D8D8;
+      width: 488px;
+       height: 30px;
+       
+     }
+
    &__a {
     width: 100%;
-    border: 1px solid gray;
     padding-left: 10px;
     color: #000;
     font-size: 12px;
+    display: block;
+    font-size: 12px;
+    border-bottom: 1px solid grey;
    }
 
    &__h1 {
@@ -65,10 +75,31 @@ label.cx-searchbox .reset {
    }
  }
 
-.cx-searchbox.dirty .cx-suggestions .cx-suggestions__title {
+ 
+
+.cx-searchbox.dirty .cx-suggestions .cx-suggestions__busqueda {
    display: block;
  }
 
-.cx-searchbox .cx-suggestions .cx-suggestions__title {
-  display:none;
-}
+ .cx-product {
+  
+   &__row {
+    margin: 0;
+    background: white;
+    border: 1px solid blue;
+
+     app-belcorp-media {
+      padding-left: 12px;
+      border: 1px solid rebeccapurple;
+            
+           img {
+             width: 72px!important;
+             height: 72px!important;
+           }
+       
+     }
+   }
+
+
+ }
+

@@ -16,7 +16,9 @@
   <div *ngIf="result.message" class="message" [innerHTML]="result.message"></div>
 
   <div class="cx-suggestions" (mousedown)="disableClose()">
-
+    <div class="cx-suggestions__busqueda">
+      <h1 class="cx-suggestions__h1">Sugerencias de búsqueda</h1>
+    </div>
     <a *ngFor="let suggestion of result.suggestions" [innerHTML]="suggestion | cxHighlight: searchInput.value"
       [routerLink]="         {
           cxRoute: 'search',
@@ -27,22 +29,31 @@
     </a>
   </div>
 
-  <div class="products" (mousedown)="disableClose()" *ngIf="result.products">
+
+  <div class="cx-product  products" (mousedown)="disableClose()" *ngIf="result.products">
     <div class="cx-suggestions__title">
       <h1 class="cx-suggestions__h1">Productos Sugeridos</h1>
     </div>
+
     <a *ngFor="let product of result.products" [routerLink]="
         {
           cxRoute: 'product',
           params: product
         } | cxUrl
       " [class.has-media]="config.displayProductImages">
-      <span class="price">{{ product.price?.formattedValue }}</span>
-      <app-belcorp-media *ngIf="config.displayProductImages" [container]="product.images?.PRIMARY" format="thumbnail"
-        [alt]="product.summary"></app-belcorp-media>
-
-      <h4 class="name" [innerHTML]="product.nameHtml"></h4>
-      <span class="price">{{ product.price?.formattedValue }}</span>
+      <div class="row cx-product__row">
+        <div class="col-md-4">
+          <app-belcorp-media *ngIf="config.displayProductImages" [container]="product.images?.PRIMARY"
+            format="thumbnail" [alt]="product.summary"></app-belcorp-media>
+        </div>
+        <div class="col-md-4">
+          <h4 class="name" [innerHTML]="product.nameHtml"></h4>
+        </div>
+        <div class="col-md-4">
+          <span class="price">{{ product.price?.formattedValue }}</span>
+        </div>
+      </div>
     </a>
+
   </div>
 </div>
