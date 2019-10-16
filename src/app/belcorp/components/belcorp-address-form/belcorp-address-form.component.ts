@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { CheckoutDeliveryService, GlobalMessageService, UserAddressService, UserService } from '@spartacus/core';
 import { AddressFormComponent, ModalService } from '@spartacus/storefront';
@@ -7,11 +7,11 @@ import { BelcorpAddress } from '../../core/src/model/belcorp.misc.model';
 @Component({
   selector: 'app-belcorp-address-form',
   templateUrl: './belcorp-address-form.component.html',
-  styleUrls: ['./belcorp-address-form.component.scss']
+  styleUrls: ['./belcorp-address-form.component.scss'],
 })
 export class BelcorpAddressFormComponent extends AddressFormComponent {
-  fb2: FormBuilder;
-
+  @Output()
+  submitAddress = new EventEmitter<any>();
   constructor(
     fb: FormBuilder,
     checkoutDeliveryService: CheckoutDeliveryService,
@@ -26,7 +26,14 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
   }
   verifyAddress(): void {
     console.log(this.address.value);
-    this.userAddressService.addUserAddress(this.collectDataFromAddressForm(this.address.value));
+
+    if (this.address.dirty) {
+      this.checkoutDeliveryService.verifyAddress(this.collectDataFromAddressForm(this.address.value));
+    } else {
+      // address form value not changed
+      // ignore duplicate address
+      this.submitAddress.emit(undefined);
+    }
   }
   collectDataFromAddressForm(formData: any): BelcorpAddress {
     const {
@@ -66,6 +73,7 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
       town,
       visibleInAddressBook,
       reference,
+      postalCode: '00',
     };
   }
 }
