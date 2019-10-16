@@ -11,6 +11,7 @@ import { CheckoutConfigService, LoginFormComponent } from '@spartacus/storefront
 })
 export class BelcorpLoginFormComponent extends LoginFormComponent {
   loginAsGuest = false;
+  hide = true;
   constructor(
     auth: AuthService,
     globalMessageService: GlobalMessageService,
