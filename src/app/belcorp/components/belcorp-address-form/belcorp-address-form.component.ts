@@ -32,7 +32,7 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
     } else {
       // address form value not changed
       // ignore duplicate address
-      this.submitAddress.emit(undefined);
+      this.submitAddress.emit(this.collectDataFromAddressForm(this.address.value));
     }
   }
   collectDataFromAddressForm(formData: any): BelcorpAddress {
