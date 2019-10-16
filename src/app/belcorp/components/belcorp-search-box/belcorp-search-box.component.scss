@@ -6,9 +6,19 @@
   border-radius: 2px;
   margin: 0;
 
+
+  @media screen and (max-width: 991px) {
+    width: 100%;
+    background: transparent;
+  }
+
   &__icon {
      color: #000!important;
      cursor: pointer;
+
+     @media screen and (max-width: 991px) {
+      color: #fff!important;
+    }
    }
 
  &__input {
@@ -17,6 +27,9 @@
      padding-left: 16px;
     border: 0;
     font-size: 12px;
+    @media screen and (max-width: 991px) {
+      width: auto;
+    }
    }
  }
 
@@ -41,13 +54,20 @@ label.cx-searchbox .reset {
      background: #D8D8D8;
      width: 488px;
       height: 30px;
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
     }
 
 
     &__busqueda {
+      display: none;
       background: #D8D8D8;
       width: 488px;
        height: 30px;
+       @media screen and (max-width: 991px) {
+        width: 100%;
+      }
        
      }
 
@@ -103,3 +123,58 @@ label.cx-searchbox .reset {
 
  }
 
+ input {
+	outline: none;
+}
+
+@media screen and (max-width: 991px) {
+
+input {
+	outline: none;
+}
+
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+  padding: 9px 10px 9px 32px;
+	width: 55px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+ input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+  cursor: pointer;
+  background: transparent;
+}
+
+ input[type=search]:focus {
+	width: px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+
+ input::-webkit-input-placeholder {
+	color: transparent;
+}
+}

@@ -1,7 +1,7 @@
 <label class="cx-searchbox" [class.dirty]="!!searchInput.value">
   <input #searchInput [placeholder]="'searchBox.placeholder' | cxTranslate" aria-label="search" (focus)="open()"
     (input)="search(searchInput.value)" (blur)="close($event)" (keydown.escape)="close($event)"
-    (keydown.enter)="launchSearchResult($event, searchInput.value)" class="cx-searchbox__input" />
+    (keydown.enter)="launchSearchResult($event, searchInput.value)" class="cx-searchbox__input" type="search" />
 
   <app-belcorp-icon class="cx-searchbox__icon" [type]="iconTypes.RESET" aria-label="reset"
     (mousedown)="clear(searchInput)" class="reset cx-searchbox__icon">
@@ -46,11 +46,13 @@
           <app-belcorp-media *ngIf="config.displayProductImages" [container]="product.images?.PRIMARY"
             format="thumbnail" [alt]="product.summary"></app-belcorp-media>
         </div>
-        <div class="col-md-4">
-          <h4 class="name" [innerHTML]="product.nameHtml"></h4>
-        </div>
-        <div class="col-md-4">
-          <span class="price">{{ product.price?.formattedValue }}</span>
+        <div class="col-md-6">
+          <div class="col-md-3">
+            <h4 class="name" [innerHTML]="product.nameHtml"></h4>
+          </div>
+          <div class="col-md-4">
+            <span class="price">{{ product.price?.formattedValue }}</span>
+          </div>
         </div>
       </div>
     </a>
