@@ -30,7 +30,7 @@ export class SearchConsultantComponent implements OnInit {
     private searchConsultantService: SearchConsultantService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private test: SiteContextConfig
+    private siteContextConfig: SiteContextConfig
   ) {
     this.searchConsultantService = searchConsultantService;
   }
@@ -145,8 +145,8 @@ export class SearchConsultantComponent implements OnInit {
     this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
       next => {
         console.log(next.urlStore);
-        this.test.context.urlParameters[3] = 'replicatedSite';
-        this.test.context['replicatedSite'] = [`${next.urlStore}`];
+        this.siteContextConfig.context.urlParameters[3] = 'replicatedSite';
+        this.siteContextConfig.context[this.siteContextConfig.context.urlParameters[3]] = [`${next.urlStore}`];
         this.router.navigate([`/`]);
       },
       error => {
