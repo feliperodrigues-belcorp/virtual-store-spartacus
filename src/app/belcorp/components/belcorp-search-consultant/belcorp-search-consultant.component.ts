@@ -36,8 +36,6 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.test.context.replicatedSite[0] = 'bugulu2';
-    this.router.navigate([`/`]);
     this.getToken();
     this.creationForms();
   }
@@ -147,8 +145,8 @@ export class SearchConsultantComponent implements OnInit {
     this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
       next => {
         console.log(next.urlStore);
-        this.router.navigate([`/${next.urlStore}`]);
-        this.showMe = false;
+        this.test.context.replicatedSite[0] = `${next.urlStore}`;
+        this.router.navigate([`/`]);
       },
       error => {
         this.showPopup = true;
