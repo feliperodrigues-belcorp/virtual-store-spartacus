@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SiteContextConfig } from '@spartacus/core';
 import { Observable } from 'rxjs';
 import { SearchConsultant } from '../../core/src/model/belcorp-search-consultant.model';
 import { SearchConsultantService } from '../../core/src/services/belcorp-search-consultant.service';
@@ -28,12 +29,15 @@ export class SearchConsultantComponent implements OnInit {
   constructor(
     private searchConsultantService: SearchConsultantService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private test: SiteContextConfig
   ) {
     this.searchConsultantService = searchConsultantService;
   }
 
   ngOnInit() {
+    this.test.context.replicatedSite[0] = 'bugulu2';
+    this.router.navigate([`/`]);
     this.getToken();
     this.creationForms();
   }
