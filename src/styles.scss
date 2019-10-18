@@ -30,6 +30,7 @@ $mystore-theme: mat-light-theme($mystore-primary, $mystore-accent, $mystore-warn
 @import './app/app.component.scss';
 
 
+
 $white: #ffff !default;
 $gray-light:#C8C8C8 !default;
 $gray-color:#808080 !default;
@@ -99,7 +100,18 @@ body {
 
   @media screen and (max-width: 991px) {
     right: 13%;
-    z-index: 0;
-     top: 5px;
+    z-index: 1;
+    top: 8px;
+      
+       label .cx-searchbox.dirty {
+        left: 4%;
+        right: 0;
+       }
   }
+
+  app-belcorp-media img{
+    width: 72px;
+    margin: 16px;
+   }
 }
+

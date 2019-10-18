@@ -2,6 +2,7 @@ import { Component, Optional } from '@angular/core';
 import { CmsSearchBoxComponent } from '@spartacus/core';
 import { CmsComponentData, SearchBoxComponent, SearchBoxComponentService } from '@spartacus/storefront';
 
+
 @Component({
   selector: 'app-belcorp-search-box',
   templateUrl: './belcorp-search-box.component.html',
@@ -16,6 +17,7 @@ export class BelcorpSearchBoxComponent extends SearchBoxComponent {
   ) {
     super(searchBoxComponentService, componentData)
   }
+
 
 
 }
