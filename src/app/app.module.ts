@@ -76,11 +76,9 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
         },
       },
       context: {
-        urlParameters: ['baseSite', 'language', 'currency', 'replicatedSite'],
+        urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['belcorp-pe', 'belcorp-cl'],
         currency: ['PEN', 'CLP'],
-        replicatedSite: ['bugulu'],
-
         // urlParameters: ['baseSite', 'language', 'currency'],
         // baseSite: ['electronics-spa', 'electronics', 'apparel-de', 'apparel-uk'],
       },

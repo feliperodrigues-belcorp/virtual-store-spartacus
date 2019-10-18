@@ -145,7 +145,8 @@ export class SearchConsultantComponent implements OnInit {
     this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
       next => {
         console.log(next.urlStore);
-        this.test.context.replicatedSite[0] = `${next.urlStore}`;
+        this.test.context.urlParameters[3] = 'replicatedSite';
+        this.test.context['replicatedSite'] = [`${next.urlStore}`];
         this.router.navigate([`/`]);
       },
       error => {
