@@ -16,7 +16,6 @@ export class SearchConsultantService {
     const headers = new HttpHeaders({
       'cx-use-client-token': 'true',
     });
-    console.log();
     return this.http.get(this.occEndpointService.getUrl('/consultant/oauth/token'), {
       headers,
     });
@@ -36,16 +35,10 @@ export class SearchConsultantService {
     const headers = new HttpHeaders({
       'cx-use-client-token': 'true',
     });
-    return this.http.post(
-      this.occEndpointService.getUrl(`/consultant/choose/`),
-      {
-        consultantCode,
-        countryIso,
-      },
-      {
-        headers,
-      }
-    );
+    const params = new HttpParams().set('consultantId', consultantCode).set('countryIso', countryIso);
+    return this.http.get(`${this.occEndpointService.getUrl(`/consultant/choose/`)}?${params}`, {
+      headers,
+    });
   }
 
   public getSearchConsultant(form: any, type: string, token: string): Observable<any[]> {

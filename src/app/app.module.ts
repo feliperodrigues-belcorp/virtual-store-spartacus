@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatInputModule,
+  MatRadioModule,
+  MatSelectModule,
+} from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -27,22 +34,23 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 
 @NgModule({
-  declarations:
-    [AppComponent,
-      BelcorpLoginFormComponent,
-      BelcorpRegisterComponent,
-      BelcorpPasswordComponent,
-      BelcorpAddressBookComponent,
-      BelcorpAddressCardComponent,
-      BelcorpAddressFormComponent,
-      BelcorpMiniCartComponent,
-      BelcorpIconComponent,
-      BelcorpItemCounterComponent,
-      BelcorpCartDetailsComponent,
-      BelcorpPromotionsComponent,
-      BelcorpCartItemListComponent,
-      BelcorpCartItemComponent,
-      BelcorpMediaComponent],
+  declarations: [
+    AppComponent,
+    BelcorpLoginFormComponent,
+    BelcorpRegisterComponent,
+    BelcorpPasswordComponent,
+    BelcorpAddressBookComponent,
+    BelcorpAddressCardComponent,
+    BelcorpAddressFormComponent,
+    BelcorpMiniCartComponent,
+    BelcorpIconComponent,
+    BelcorpItemCounterComponent,
+    BelcorpCartDetailsComponent,
+    BelcorpPromotionsComponent,
+    BelcorpCartItemListComponent,
+    BelcorpCartItemComponent,
+    BelcorpMediaComponent,
+  ],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
@@ -125,4 +133,4 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
