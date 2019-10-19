@@ -6,4 +6,9 @@ export interface BelcorpUserSignUp extends UserSignUp {
 }
 export interface BelcorpAddress extends Address {
   reference?: string;
+  commune?: string;
+  locality?: string;
+  department?: string;
+  province?: string;
+  district?: string;
 }

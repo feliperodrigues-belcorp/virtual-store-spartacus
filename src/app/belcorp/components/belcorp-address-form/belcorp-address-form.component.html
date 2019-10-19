@@ -49,6 +49,82 @@
             placeholder="{{ 'addressForm.lastName.placeholder' | cxTranslate }}" formControlName="lastName" />
         </label>
       </div>
+
+      <ng-container *ngIf="siteCountry === 'PE'">
+
+        <div class="form-group">
+          <label>
+            <span class="label-content required">{{
+              'addressForm.department.label' | cxTranslate
+            }}</span>
+            <input type="text" class="form-control" required
+              placeholder="{{ 'addressForm.department.placeholder' | cxTranslate }}" formControlName="department" />
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <span class="label-content required">{{
+                'addressForm.province.label' | cxTranslate
+              }}</span>
+            <input type="text" class="form-control" required
+              placeholder="{{ 'addressForm.province.placeholder' | cxTranslate }}" formControlName="province" />
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <span class="label-content required">{{
+                      'addressForm.district.label' | cxTranslate
+                    }}</span>
+            <input type="text" class="form-control" required
+              placeholder="{{ 'addressForm.district.placeholder' | cxTranslate }}" formControlName="district" />
+          </label>
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="siteCountry === 'CL'">
+
+        <div class="form-group">
+          <ng-container *ngIf="regions$ | async as regions" formGroupName="region">
+            <div *ngIf="regions.length !== 0">
+              <label aria-required="true">
+                <span class="label-content required">{{
+                    'addressForm.region' | cxTranslate
+                  }}</span>
+                <ng-select class="region-select" formControlName="isocode" [searchable]="true" [clearable]="false"
+                  [items]="regions" bindLabel="{{ regions[0].name ? 'name' : 'isocode' }}"
+                  bindValue="{{ regions[0].name ? 'isocode' : 'region' }}"
+                  placeholder="{{ 'addressForm.selectOne' | cxTranslate }}" (change)="regionSelected($event)">
+                </ng-select>
+              </label>
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <span class="label-content required">{{
+                'addressForm.commune.label' | cxTranslate
+              }}</span>
+            <input type="text" class="form-control" required
+              placeholder="{{ 'addressForm.commune.placeholder' | cxTranslate }}" formControlName="commune" />
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <span class="label-content required">{{
+                  'addressForm.locality.label' | cxTranslate
+                }}</span>
+            <input type="text" class="form-control" required
+              placeholder="{{ 'addressForm.locality.placeholder' | cxTranslate }}" formControlName="locality" />
+          </label>
+        </div>
+
+      </ng-container>
+
       <div class="form-group">
         <label>
           <span class="label-content required">{{
@@ -74,33 +150,7 @@
             formControlName="reference" />
         </label>
       </div>
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label>
-            <span class="label-content required">{{
-                'addressForm.city.label' | cxTranslate
-              }}</span>
-            <input type="text" class="form-control" required
-              placeholder="{{ 'addressForm.city.placeholder' | cxTranslate }}" formControlName="town" />
-          </label>
-        </div>
-        <div class="form-group col-md-6">
-          <ng-container *ngIf="regions$ | async as regions" formGroupName="region">
-            <div *ngIf="regions.length !== 0">
-              <label aria-required="true">
-                <span class="label-content required">{{
-                    'addressForm.state' | cxTranslate
-                  }}</span>
-                <ng-select class="region-select" formControlName="isocode" [searchable]="true" [clearable]="false"
-                  [items]="regions" bindLabel="{{ regions[0].name ? 'name' : 'isocode' }}"
-                  bindValue="{{ regions[0].name ? 'isocode' : 'region' }}"
-                  placeholder="{{ 'addressForm.selectOne' | cxTranslate }}" (change)="regionSelected($event)">
-                </ng-select>
-              </label>
-            </div>
-          </ng-container>
-        </div>
-      </div>
+
       <div class="form-group">
         <label>
           <span class="label-content">{{
