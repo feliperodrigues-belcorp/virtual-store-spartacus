@@ -30,8 +30,12 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
     super(fb, checkoutDeliveryService, userService, userAddressService, globalMessageService, modalService);
     this.address.removeControl('postalCode');
     this.address.removeControl('town');
+    this.address.removeControl('title');
+    this.address.removeControl('firstName');
+    this.address.removeControl('lastName');
 
     this.address.addControl('reference', new FormControl(''));
+    this.address.addControl('addressName', new FormControl(''));
 
     this.belcorpCountryService = belcorpCountryService;
     this.siteCountry = this.belcorpCountryService.getCountry();
@@ -52,24 +56,23 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
 
   verifyAddress(): void {
     console.log(this.address.value);
-
-    if (this.address.dirty) {
-      this.checkoutDeliveryService.verifyAddress(this.collectDataFromAddressForm(this.address.value));
-    } else {
+    // TODO: Uncomment and fix this validation
+    // if (this.address.dirty) {
+    //   this.checkoutDeliveryService.verifyAddress(this.collectDataFromAddressForm(this.address.value));
+    // } else {
       // address form value not changed
       // ignore duplicate address
       this.submitAddress.emit(this.collectDataFromAddressForm(this.address.value));
-    }
+    // }
   }
   collectDataFromAddressForm(formData: any): BelcorpAddress {
     const {
-      firstName,
+      addressName,
       country,
       defaultAddress,
       email,
       formattedAddress,
       id,
-      lastName,
       line1,
       line2,
       phone,
@@ -80,19 +83,17 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
       commune,
       locality,
       shippingAddress,
-      title,
       titleCode,
       visibleInAddressBook,
       reference,
     } = formData;
     return {
-      firstName,
+      addressName,
       country,
       defaultAddress,
       email,
       formattedAddress,
       id,
-      lastName,
       line1,
       line2,
       phone,
@@ -103,11 +104,13 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
       commune,
       locality,
       shippingAddress,
-      title,
       titleCode,
       visibleInAddressBook,
       reference,
-      town: 'ABCDEG',
+      title: '00',
+      firstName: '00',
+      lastName: '00',
+      town: '00',
       postalCode: '00',
     };
   }

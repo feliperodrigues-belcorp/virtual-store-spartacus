@@ -1,13 +1,8 @@
 {
   "addressForm": {
-    "title": "Title",
-    "firstName": {
-      "label": "First name",
-      "placeholder": "First Name"
-    },
-    "lastName": {
-      "label": "Last name",
-      "placeholder": "Last Name"
+    "addressName": {
+      "label": "Address Name",
+      "placeholder": "Address Name"
     },
     "address1": "Address 1",
     "address2": "Address 2 (optional)",
