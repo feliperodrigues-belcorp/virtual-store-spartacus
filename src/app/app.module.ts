@@ -61,6 +61,9 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
           legacy: false,
         },
       },
+      // personalization: {
+      //   enabled: true,
+      // },
       authentication: {
         client_id: 'belcorp_esb',
         client_secret: 'secret',
