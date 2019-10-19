@@ -1,3 +1,4 @@
+// import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -32,7 +33,7 @@ import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/
 import { BelcorpPromotionsComponent } from './belcorp/components/belcorp-promotions/belcorp-promotions.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
-
+// import { ConsultantInterceptor } from './belcorp/core/src/interceptors/consultant.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,9 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
           legacy: false,
         },
       },
+      // personalization: {
+      //   enabled: true,
+      // },
       authentication: {
         client_id: 'belcorp_esb',
         client_secret: 'secret',
@@ -97,7 +101,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
         },
         resources: translations,
         chunks: translationChunksConfig,
-        fallbackLang: 'en',
+        fallbackLang: 'es',
       },
       features: {
         level: '1.2',
@@ -129,7 +133,9 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     MatExpansionModule,
     MatRadioModule,
     NgSelectModule,
+    // HttpClientModule,
   ],
+  // providers: [{ provide: HTTP_INTERCEPTORS, useClass: ConsultantInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

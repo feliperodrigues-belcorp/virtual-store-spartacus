@@ -13,6 +13,7 @@ import {
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
 import { ConfigModule, I18nModule, UrlModule } from '@spartacus/core';
+import { CookieService } from 'ngx-cookie-service';
 import { SearchConsultantComponent } from './belcorp-search-consultant.component';
 
 @NgModule({
@@ -39,6 +40,7 @@ import { SearchConsultantComponent } from './belcorp-search-consultant.component
     }),
     I18nModule,
   ],
+  providers: [CookieService],
   declarations: [SearchConsultantComponent],
   exports: [SearchConsultantComponent],
   entryComponents: [SearchConsultantComponent],
