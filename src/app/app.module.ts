@@ -55,7 +55,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://localhost:9002',
+          baseUrl: 'https://keyrusbelcorp.com',
           prefix: '/belcorpws/v2/',
           legacy: false,
         },
@@ -79,7 +79,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['belcorp-pe', 'belcorp-cl'],
         currency: ['PEN', 'CLP'],
-        language: ['es']
+
       },
 
       // custom routing configuration for e2e testing
@@ -97,7 +97,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
         },
         resources: translations,
         chunks: translationChunksConfig,
-        fallbackLang: 'es',
+        fallbackLang: 'en',
       },
       features: {
         level: '1.2',
