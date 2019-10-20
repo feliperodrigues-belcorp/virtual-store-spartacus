@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
@@ -16,7 +16,10 @@ import { BelcorpAddressFormComponent } from './belcorp/components/belcorp-addres
 import { BelcorpCartDetailsComponent } from './belcorp/components/belcorp-cart-details/belcorp-cart-details.component';
 import { BelcorpCartItemListComponent } from './belcorp/components/belcorp-cart-item-list/belcorp-cart-item-list.component';
 import { BelcorpCartItemComponent } from './belcorp/components/belcorp-cart-item/belcorp-cart-item.component';
+import { BelcorpCategoryNavigationComponent } from './belcorp/components/belcorp-category-navigation/belcorp-category-navigation.component';
+import { BelcorpHamburgerMenuComponent } from './belcorp/components/belcorp-hamburger-menu/belcorp-hamburger-menu.component';
 import { BelcorpIconComponent } from './belcorp/components/belcorp-icon/belcorp-icon.component';
+import { BelcorpInfoConsultantComponent } from './belcorp/components/belcorp-info-consultant/belcorp-info-consultant.component';
 import { BelcorpItemCounterComponent } from './belcorp/components/belcorp-item-counter/belcorp-item-counter.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
 import { BelcorpMediaComponent } from './belcorp/components/belcorp-media/belcorp-media.component';
@@ -25,6 +28,7 @@ import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/
 import { BelcorpPromotionsComponent } from './belcorp/components/belcorp-promotions/belcorp-promotions.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
+
 
 @NgModule({
   declarations:
@@ -42,7 +46,11 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
       BelcorpPromotionsComponent,
       BelcorpCartItemListComponent,
       BelcorpCartItemComponent,
-      BelcorpMediaComponent],
+      BelcorpMediaComponent,
+      BelcorpHamburgerMenuComponent,
+      BelcorpInfoConsultantComponent,
+      BelcorpCategoryNavigationComponent,
+    ],
   imports: [
     B2cStorefrontModule.withConfig({
       backend: {
@@ -122,7 +130,13 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
     MatExpansionModule,
     MatRadioModule,
     NgSelectModule,
+
+
   ],
   bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }
