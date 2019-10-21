@@ -82,6 +82,7 @@ import { SearchConsultantModule } from './belcorp/components/belcorp-search-cons
       context: {
         urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['belcorp-pe', 'belcorp-cl'],
+        language : ['es'],
         currency: ['PEN', 'CLP'],
 
       },
