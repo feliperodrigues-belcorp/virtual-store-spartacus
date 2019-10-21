@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SiteContextConfig } from '@spartacus/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { SearchConsultant } from '../../core/src/model/belcorp-search-consultant.model';
 import { SearchConsultantService } from '../../core/src/services/belcorp-search-consultant.service';
@@ -24,11 +26,14 @@ export class SearchConsultantComponent implements OnInit {
   public warning = false;
   public showPopup = false;
   public token: string;
+  public cookieValue: string;
 
   constructor(
     private searchConsultantService: SearchConsultantService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private siteContextConfig: SiteContextConfig,
+    private cookieService: CookieService
   ) {
     this.searchConsultantService = searchConsultantService;
   }
@@ -140,10 +145,14 @@ export class SearchConsultantComponent implements OnInit {
   }
 
   public sentConsultantToHybris(consult: string, country: string) {
-    this.router.navigate(['/']);
     this.searchConsultantService.sendConsultantCodeToHybris(consult, country).subscribe(
       next => {
-        this.showMe = false;
+        console.log(next.urlStore);
+        this.cookieService.set('consultant_site', `${next.urlStore}`);
+        this.cookieService.set('consultant_id', `${next.consultantId}`);
+        this.siteContextConfig.context.urlParameters[3] = 'replicatedSite';
+        this.siteContextConfig.context[this.siteContextConfig.context.urlParameters[3]] = [`${next.urlStore}`];
+        this.router.navigate([`/`]);
       },
       error => {
         this.showPopup = true;
