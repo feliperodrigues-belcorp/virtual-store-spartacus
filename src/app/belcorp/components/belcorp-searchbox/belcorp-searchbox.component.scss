@@ -1,0 +1,308 @@
+app-belcorp-media img{
+  width: 72px;
+  margin: 10px 10px 10px 0px;
+ }
+ 
+.cx-searchbox {
+  background: var(--cx-color-white);
+  color: var (--cx-color-text);
+  width: 488px;
+   height: 34px;
+  border-radius: 2px;
+  margin: 0;
+ 
+
+
+   @media screen and (max-width: 991px) {
+    width: 100%;
+    background: black;
+    display: flex;
+           
+        label .cx-searchbox.dirty {
+          position: relative;
+          left: 5%;
+        }
+   }
+
+  &__icon {
+     color: #000!important;
+     cursor: pointer;
+
+      @media screen and (max-width: 991px) {
+       color: #fff!important;
+       position: relative;
+       top: 7px;
+
+         .cx-searchbox.dirty {
+          margin-left: 4px;
+          margin-right: 5px;
+         }
+     }
+   }
+
+ &__input {
+    width: 450px;
+    height: 33px;
+     padding-left: 10px;
+    border: 0;
+    font-size: 12px;
+     @media screen and (max-width: 991px) {
+     width: 100%;
+     padding-left: 32px;
+     color: #000;
+     background-color: #fff;
+     cursor: auto;
+     margin-top: 5px;
+     height: 28px;
+     margin: 0;
+     }
+   }
+ }
+
+ label.cx-searchbox.dirty .search {
+   display: none;
+    @media screen and (max-width: 991px) {
+     color: #fff!important;
+     margin-left: 5px;
+    margin-right: 10px;  
+
+   }
+ }
+
+ label.cx-searchbox.dirty .reset {
+  display:inline-block;
+
+  @media screen and (max-width: 991px) {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+}
+
+label.cx-searchbox .reset {
+  display:none;
+}
+
+ .cx-suggestions {
+   flex-wrap: wrap;
+   background: white;
+
+
+   &__title {
+     background: #D8D8D8;
+     width: 488px;
+      height: 30px;
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
+    }
+
+
+    &__busqueda {
+      background: #D8D8D8;
+      width: 488px;
+      height: 30px;
+       @media screen and (max-width: 991px) {
+        width: 100%;
+      }
+       
+     }
+
+   &__a {
+    width: 100%;
+    padding-left: 16px;
+    color: #000;
+    font-size: 12px;
+    display: block;
+    font-size: 12px;
+    border-bottom: 1px solid grey;
+   }
+
+   &__h1 {
+    padding-top: 7px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #000000;
+    padding-left: 12px;
+
+   }
+ }
+
+
+ .results {
+    @media screen and (max-width: 991px) {
+      position: relative;
+      left: 5%;
+   }
+  }
+
+  .message {
+    background: white;
+    font-size: 12px;
+    padding:10px;
+    color: black;
+  }
+
+.cx-searchbox.dirty .cx-suggestions .cx-suggestions__busqueda {
+   display: block;
+ }
+
+ .cx-product {
+  
+   &__row {
+    margin: 0;
+    background: white;
+    border-bottom: 1px solid #f5f5f5;
+  
+   }
+
+   &__img {
+     padding: 0;
+   }
+
+   &__rowcol {
+    margin: 0;
+    background: white;
+
+     &--border{
+       border-right: 1px solid #c4c4c4;
+       padding: 0;
+       font-size: 12px;
+
+     }
+
+     &--font{
+      font-size: 12px;
+
+    }
+   }
+
+   &__h4{
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    margin: 0;
+   }
+
+   &__h2{
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    color: #000000;
+   }
+
+
+   &__information{
+    font-size: 8px;
+    line-height: 14px;
+    color: #979797;
+    margin:0;
+   }
+
+   &__coltitle{
+     margin-top:16px;
+   }
+
+   
+   &__precio{
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration-line: line-through;
+    color: #000000;
+   }
+
+   &__oferta{
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FF9900;
+    
+   }
+
+
+ }
+
+ input {
+	outline: none;
+}
+
+@media screen and (max-width: 991px) {
+
+ input {
+ 	outline: none;
+ }
+
+ input[type=text] {
+ 	-webkit-appearance: textfield;
+ 	-webkit-box-sizing: content-box;
+ 	font-family: inherit;
+ 	font-size: 100%;
+ }
+ input::-webkit-search-decoration,
+ input::-webkit-search-cancel-button {
+ 	display: none; 
+ }
+
+
+input[type=text] {
+ 	width: 55px;
+
+ }
+
+  input[type=text] {
+ 	width: 15px;
+ 	padding-left: 10px;
+ 	color: transparent;
+   cursor: pointer;
+   background: transparent;
+ }
+
+    input[type=text]:focus {
+      width: 100%;
+      padding-left: 12px;
+      color: #000;
+      background-color: #fff;
+      cursor: auto;
+      height: 28px;
+
+        app-belcorp-icon {
+          position: relative;
+          top: 6px;
+          left: -8px;
+          color: #000!important;
+        }
+
+       
+    }
+
+    label .cx-searchbox.dirty input[type=text]:focus {
+      width: 217px;
+      padding-left: 32px;
+      color: #000;
+      background-color: #fff;
+      cursor: auto;
+      height: 28px;
+  
+    }
+
+          input::-webkit-input-placeholder {
+            color: transparent;
+      }
+ }
+
+ @media screen and (max-width: 991px) {
+        
+      label.cx-searchbox.dirty {
+        position: relative;
+        left: 5%;
+      }
+
+     
+    }
+
+  
