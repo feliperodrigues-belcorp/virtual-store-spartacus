@@ -1,15 +1,18 @@
 <a [attr.aria-label]="
     'miniCart.item' | cxTranslate: { count: quantity$ | async }
-  " [routerLink]="{ cxRoute: 'cart' } | cxUrl">
+  " [routerLink]="{ cxRoute: 'cart' } | cxUrl" class="cx-mini-cart__a">
   <i class="material-icons cx-mini-cart__icon" [type]="iconTypes.CART">shopping_cart
   </i>
 
   <!-- <span class="total">{{ total$ | async }}</span> -->
-  <span class="count" *ngIf=" ( quantity$ | async ) > 99;else cartMoreThan99">
-    +99
+  <span class="count" *ngIf=" ( quantity$ | async ) > 99;else cartMoreThan99" matBadge="+99" matBadgeOverlap="false"
+    matBadgeSize="medium">
+
   </span>
-  <ng-template #cartMoreThan99><span class="count"> {{ quantity$ | async }} </span></ng-template>
-  <p>Mi carrito</p>
+  <ng-template #cartMoreThan99><span class="count" matBadge="{{quantity$ | async}} " matBadgeOverlap="false"
+      matBadgeSize="medium"> </span>
+  </ng-template>
+  <p class="cx-mini-cart__p">Mi carrito</p>
 
 
 
