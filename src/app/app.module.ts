@@ -28,6 +28,7 @@ import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/
 import { BelcorpPromotionsComponent } from './belcorp/components/belcorp-promotions/belcorp-promotions.component';
 import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/belcorp-register.component';
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
+import { BelcorpHighlightPipeComponent } from './belcorp/components/belcorp-searchbox/belcorp-highlight-pipe.component';
 import { BelcorpSearchboxComponent } from './belcorp/components/belcorp-searchbox/belcorp-searchbox.component';
 
 
@@ -52,6 +53,7 @@ import { BelcorpSearchboxComponent } from './belcorp/components/belcorp-searchbo
       BelcorpInfoConsultantComponent,
       BelcorpCategoryNavigationComponent,
       BelcorpSearchboxComponent,
+      BelcorpHighlightPipeComponent,
 
     ],
   imports: [
