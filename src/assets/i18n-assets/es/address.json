@@ -1,23 +1,17 @@
 {
   "addressForm": {
-    "title": "Title",
-    "firstName": {
-      "label": "First name",
-      "placeholder": "First Name"
-    },
-    "lastName": {
-      "label": "Last name",
-      "placeholder": "Last Name"
+    "addressName": {
+      "label": "Address Name",
+      "placeholder": "Address Name"
     },
     "address1": "Address 1",
     "address2": "Address 2 (optional)",
     "country": "Country",
-    "reference": "Referencia",
+    "reference": "Reference (optional)",
     "city": {
       "label": "City",
       "placeholder": "City"
     },
-    "state": "State",
     "zipCode": {
       "label": "Zip code",
       "placeholder": "Postal Code/Zip"
@@ -36,7 +30,28 @@
     "userAddressAddSuccess": "New address was added successfully!",
     "userAddressUpdateSuccess": "Address updated successfully!",
     "userAddressDeleteSuccess": "Address deleted successfully!",
-    "invalidAddress": "Invalid Address"
+    "invalidAddress": "Invalid Address",
+    "region": "Region",
+    "commune": {
+      "label": "Commune",
+      "placeholder": "Commune"
+    },
+    "locality": {
+      "label": "Locality",
+      "placeholder": "Locality"
+    },
+    "department": {
+      "label": "Department",
+      "placeholder": "Department"
+    },
+    "province": {
+      "label": "Province",
+      "placeholder": "Province"
+    },
+    "district": {
+      "label": "District",
+      "placeholder": "District"
+    }
   },
   "addressBook": {
     "addNewShippingAddress": "Add a new shipping address",
