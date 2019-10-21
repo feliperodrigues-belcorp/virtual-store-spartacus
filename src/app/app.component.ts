@@ -30,7 +30,9 @@ export class AppComponent implements OnInit {
       this.siteContextConfig.context[this.siteContextConfig.context.urlParameters[3]] = [this.cookieValue];
       this.router.navigate([`/`]);
     } else {
-      this.router.navigate([`/consultant/search`]);
+
+     //make to back end side
+    //  this.router.navigate([`/consultant/search`]);
     }
   }
 }
