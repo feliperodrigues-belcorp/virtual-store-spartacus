@@ -41,6 +41,15 @@ export class SearchConsultantService {
     });
   }
 
+  public sendToHome(): Observable<any> {
+    const headers = new HttpHeaders({
+      'cx-use-client-token': 'true',
+    });
+    return this.http.get(this.occEndpointService.getUrl('/cms/pages/homepage'), {
+      headers,
+    });
+  }
+
   public getSearchConsultant(form: any, type: string, token: string): Observable<any[]> {
     const header = new HttpHeaders({ 'Content-Type': 'application', 'x-access-token': token });
     let params;
