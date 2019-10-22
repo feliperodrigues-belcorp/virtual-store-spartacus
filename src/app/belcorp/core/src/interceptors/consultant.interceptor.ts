@@ -15,7 +15,7 @@ export class ConsultantInterceptor implements HttpInterceptor {
       request = request.clone({
         setHeaders: {
           consultant_id: this.cookieValueConsultant,
-          consultant_iso: this.cookieValueConsultantIso,
+          country_iso: this.cookieValueConsultantIso,
         },
       });
     }
