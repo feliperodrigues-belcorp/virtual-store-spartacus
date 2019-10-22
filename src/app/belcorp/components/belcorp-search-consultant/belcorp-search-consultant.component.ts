@@ -150,6 +150,7 @@ export class SearchConsultantComponent implements OnInit {
         console.log(next.urlStore);
         this.cookieService.set('consultant_site', `${next.urlStore}`);
         this.cookieService.set('consultant_id', `${next.consultantId}`);
+        this.cookieService.set('country_iso', `${next.country}`);
         this.siteContextConfig.context.urlParameters[3] = 'replicatedSite';
         this.siteContextConfig.context[this.siteContextConfig.context.urlParameters[3]] = [`${next.urlStore}`];
         this.router.navigate([`/`]);

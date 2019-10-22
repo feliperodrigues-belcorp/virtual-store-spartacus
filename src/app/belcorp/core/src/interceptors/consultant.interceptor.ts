@@ -4,14 +4,18 @@ import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 @Injectable()
 export class ConsultantInterceptor implements HttpInterceptor {
-  public cookieValue;
+  public cookieValueConsultant;
+  public cookieValueConsultantIso;
   constructor(private cookieService: CookieService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.cookieValue = this.cookieService.get('consultant_site');
-    if (this.cookieValue.length > 0) {
+    this.cookieValueConsultant = this.cookieService.get('consultant_id');
+    this.cookieValueConsultantIso = this.cookieService.get('consultant_iso');
+
+    if (this.cookieValueConsultant.length > 0) {
       request = request.clone({
         setHeaders: {
-          consultant: this.cookieValue,
+          consultant_id: this.cookieValueConsultant,
+          consultant_iso: this.cookieValueConsultantIso,
         },
       });
     }
