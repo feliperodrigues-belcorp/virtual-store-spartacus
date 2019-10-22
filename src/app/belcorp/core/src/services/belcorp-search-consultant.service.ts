@@ -45,7 +45,7 @@ export class SearchConsultantService {
     const headers = new HttpHeaders({
       'cx-use-client-token': 'true',
     });
-    return this.http.get(this.occEndpointService.getUrl('/cms/pages/homepage'), {
+    return this.http.get(this.occEndpointService.getUrl('/cms/pages?pageLabelOrId=homepage&pageType=ContentPage'), {
       headers,
     });
   }
