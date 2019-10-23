@@ -11,7 +11,7 @@ export class ConsultantInterceptor implements HttpInterceptor {
   constructor(private cookieService: CookieService, private router: Router) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.cookieValueConsultant = this.cookieService.get('consultant_id');
-    this.cookieValueConsultantIso = this.cookieService.get('consultant_iso');
+    this.cookieValueConsultantIso = this.cookieService.get('country_iso');
     const str = this.router.url;
     const n = str.lastIndexOf('/');
     const result = str.substring(n + 1);
