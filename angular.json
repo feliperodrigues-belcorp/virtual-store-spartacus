@@ -10,6 +10,7 @@
           "style": "scss"
         }
       },
+
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -25,7 +26,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/webApplicationInjector.js"
             ],
             "styles": [
               "src/styles.scss"

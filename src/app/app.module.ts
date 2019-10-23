@@ -56,7 +56,7 @@ import { ConsultantInterceptor } from './belcorp/core/src/interceptors/consultan
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://keyrusbelcorp.com',
+          baseUrl: 'https://localhost:9002',
           prefix: '/belcorpws/v2/',
           legacy: false,
         },
