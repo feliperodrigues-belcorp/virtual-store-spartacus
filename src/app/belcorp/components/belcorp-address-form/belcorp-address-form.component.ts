@@ -12,9 +12,8 @@ import { BelcorpCountryService } from '../../core/src/services/belcorp-country.s
   providers: [BelcorpCountryService],
 })
 export class BelcorpAddressFormComponent extends AddressFormComponent {
-
   private belcorpCountryService: BelcorpCountryService;
-  private siteCountry: string;
+  public siteCountry: string;
 
   @Output()
   submitAddress = new EventEmitter<any>();
@@ -60,9 +59,9 @@ export class BelcorpAddressFormComponent extends AddressFormComponent {
     // if (this.address.dirty) {
     //   this.checkoutDeliveryService.verifyAddress(this.collectDataFromAddressForm(this.address.value));
     // } else {
-      // address form value not changed
-      // ignore duplicate address
-      this.submitAddress.emit(this.collectDataFromAddressForm(this.address.value));
+    // address form value not changed
+    // ignore duplicate address
+    this.submitAddress.emit(this.collectDataFromAddressForm(this.address.value));
     // }
   }
   collectDataFromAddressForm(formData: any): BelcorpAddress {

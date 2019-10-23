@@ -1,17 +1,26 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 @Injectable()
 export class ConsultantInterceptor implements HttpInterceptor {
-  public cookieValue;
-  constructor(private cookieService: CookieService) {}
+  public cookieValueConsultant;
+  public cookieValueConsultantIso;
+  public navigateUrl;
+  constructor(private cookieService: CookieService, private router: Router) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.cookieValue = this.cookieService.get('consultant_site');
-    if (this.cookieValue.length > 0) {
+    this.cookieValueConsultant = this.cookieService.get('consultant_id');
+    this.cookieValueConsultantIso = this.cookieService.get('consultant_iso');
+    const str = this.router.url;
+    const n = str.lastIndexOf('/');
+    const result = str.substring(n + 1);
+
+    if (this.cookieValueConsultant.length > 0 && result !== 'search') {
       request = request.clone({
         setHeaders: {
-          consultant: this.cookieValue,
+          consultant_id: this.cookieValueConsultant,
+          country_iso: this.cookieValueConsultantIso,
         },
       });
     }

@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBadgeModule, MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule } from '@angular/material';
@@ -31,6 +32,7 @@ import { BelcorpRegisterComponent } from './belcorp/components/belcorp-register/
 import { SearchConsultantModule } from './belcorp/components/belcorp-search-consultant/belcorp-search-consultant.module';
 import { BelcorpHighlightPipeComponent } from './belcorp/components/belcorp-searchbox/belcorp-highlight-pipe.component';
 import { BelcorpSearchboxComponent } from './belcorp/components/belcorp-searchbox/belcorp-searchbox.component';
+import { ConsultantInterceptor } from './belcorp/core/src/interceptors/consultant.interceptor';
 
 
 @NgModule({
@@ -89,7 +91,6 @@ import { BelcorpSearchboxComponent } from './belcorp/components/belcorp-searchbo
         baseSite: ['belcorp-pe', 'belcorp-cl'],
         language: ['es'],
         currency: ['PEN', 'CLP'],
-
       },
 
       // custom routing configuration for e2e testing
@@ -140,9 +141,10 @@ import { BelcorpSearchboxComponent } from './belcorp/components/belcorp-searchbo
     MatRadioModule,
     NgSelectModule,
     MatBadgeModule,
+    HttpClientModule,
 
   ],
-  // providers: [{ provide: HTTP_INTERCEPTORS, useClass: ConsultantInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ConsultantInterceptor, multi: true }],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
