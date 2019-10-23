@@ -1,0 +1,48 @@
+.cx-belcorp-login {
+  
+   &__position{
+    display: flex;
+    flex-direction: unset;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+
+     @media screen and (max-width: 991px) {
+       display: block;
+       text-align: left;
+     }
+   }
+   &__icon{
+     font-size: 27px;
+     color: var(--cx-color-white);
+
+     @media screen and (max-width: 991px) {
+       color: var(--cx-color-text);
+       position: relative;
+       top: 5px;
+       padding-left: 12px;
+   
+     }
+   }
+
+   &__title {
+    margin: 0;
+    padding-left: 5px;
+    color: var(--cx-color-white);
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 4px;
+
+    @media screen and (max-width: 991px) {
+      color: var(--cx-color-text);
+      font-size: 16px;
+    }
+   }
+
+}

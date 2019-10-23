@@ -22,6 +22,7 @@ import { BelcorpIconComponent } from './belcorp/components/belcorp-icon/belcorp-
 import { BelcorpInfoConsultantComponent } from './belcorp/components/belcorp-info-consultant/belcorp-info-consultant.component';
 import { BelcorpItemCounterComponent } from './belcorp/components/belcorp-item-counter/belcorp-item-counter.component';
 import { BelcorpLoginFormComponent } from './belcorp/components/belcorp-login-form/belcorp-login-form.component';
+import { BelcorpLoginComponent } from './belcorp/components/belcorp-login/belcorp-login.component';
 import { BelcorpMediaComponent } from './belcorp/components/belcorp-media/belcorp-media.component';
 import { BelcorpMiniCartComponent } from './belcorp/components/belcorp-mini-cart/belcorp-mini-cart.component';
 import { BelcorpPasswordComponent } from './belcorp/components/belcorp-password/belcorp-password.component';
@@ -54,7 +55,7 @@ import { BelcorpSearchboxComponent } from './belcorp/components/belcorp-searchbo
       BelcorpCategoryNavigationComponent,
       BelcorpSearchboxComponent,
       BelcorpHighlightPipeComponent,
-
+      BelcorpLoginComponent,
     ],
   imports: [
     B2cStorefrontModule.withConfig({

@@ -296,3 +296,119 @@
 .mat-progress-spinner circle, .mat-spinner circle {
   stroke: #B9007E;
  }
+
+
+ .cx-consultant-info{
+  border: 1px solid red;
+  width: 100%;
+
+  &__container {
+    width: 474px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      text-align: left;
+    }
+  }
+  &__img {
+   width: 85.97px;
+   height: 82.39px;
+   border-radius: 50%;
+  }
+
+  &__pais{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    @media screen and (max-width: 991px) {
+      margin-left: 20px;
+    }
+
+      &--img{
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+      }
+
+      &--p {
+        margin: 0;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: #979797;
+      }
+  }
+
+  &__info {
+    text-align: left;
+    padding: 0;
+
+    &--h1 {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+
+    &--h2 {
+      font-size: 12px;
+      line-height: 14px;
+      color: #979797;
+    }
+
+    &--border {
+      border-right: 0.5px solid #979797;
+      padding-right: 0;
+
+      @media screen and (max-width: 991px) {
+        padding: 0;   
+        border: none;    
+      }
+    }
+
+    &--mobile {
+      @media screen and (max-width: 991px) {
+        padding: 0;
+        margin-bottom: 11px;
+      }
+    }
+
+    &--telefono {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      color: #000000;
+      margin-bottom:10px;
+    }
+
+    &--icon {
+      margin-right: 5px;
+      position: relative;
+      top: 3px;
+      font-size: 14px;
+    }
+
+    &--tel {
+      color: #000000;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}

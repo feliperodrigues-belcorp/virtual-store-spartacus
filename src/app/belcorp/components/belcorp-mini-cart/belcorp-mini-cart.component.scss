@@ -1,9 +1,5 @@
 .cx-mini-cart {
 
-  a:hover {
-    text-decoration: none!important;
-  }
-
   &__icon {
     color: var(--cx-color-white);
  
@@ -16,6 +12,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    text-decoration: none!important;
   }
 
   &__p{

@@ -1,0 +1,15 @@
+<ng-container *ngIf="user$ | async as user; else login">
+  <div class="cx-login-greet">
+    {{ 'miniLogin.userGreeting' | cxTranslate: { name: user.name } }}
+  </div>
+  <div position="HeaderLinks"></div>
+</ng-container>
+
+<ng-template #login>
+  <a class="cx-belcorp-login__position" role="link" [routerLink]="{ cxRoute: 'login' } | cxUrl">
+    <i class="material-icons cx-belcorp-login__icon">
+      person
+    </i><span class="cx-belcorp-login__title">{{
+    'miniLogin.signInRegister' | cxTranslate
+  }}</span></a>
+</ng-template>
