@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       this.router.navigate([`/`]);
     } else {
       // make to back end side
-      this.router.navigate([`/consultant/search`]);
+    //  this.router.navigate([`/consultant/search`]);
     }
   }
 }

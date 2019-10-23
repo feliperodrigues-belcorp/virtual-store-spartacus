@@ -153,7 +153,8 @@ export class SearchConsultantComponent implements OnInit {
         this.cookieService.set('country_iso', `${next.country}`);
         this.siteContextConfig.context.urlParameters[3] = 'replicatedSite';
         this.siteContextConfig.context[this.siteContextConfig.context.urlParameters[3]] = [`${next.urlStore}`];
-        this.sendToHomePage();
+       // this.sendToHomePage();
+       window.location.reload();
       },
       error => {
         this.showPopup = true;
