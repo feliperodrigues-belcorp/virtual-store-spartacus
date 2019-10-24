@@ -12,4 +12,6 @@ export class BelcorpHighlightPipeComponent implements PipeTransform {
       `<span class="highlight">${match.trim()}</span>`
     );
   }
+
+
 }
