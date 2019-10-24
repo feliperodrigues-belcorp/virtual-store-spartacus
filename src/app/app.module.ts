@@ -17,6 +17,7 @@ import { translationChunksConfig, translations } from '@spartacus/assets';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import { B2cStorefrontModule, SpinnerModule } from '@spartacus/storefront';
 import { NgxMaskModule } from 'ngx-mask';
+import { SearchConsultantService } from '../app/belcorp/core/src/services/belcorp-search-consultant.service';
 import { AppComponent } from './app.component';
 import { BelcorpAddressBookComponent } from './belcorp/components/belcorp-address-book/belcorp-address-book.component';
 import { BelcorpAddressCardComponent } from './belcorp/components/belcorp-address-book/belcorp-address-card/belcorp-address-card.component';
@@ -135,7 +136,7 @@ import { ConsultantInterceptor } from './belcorp/core/src/interceptors/consultan
     NgSelectModule,
     HttpClientModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ConsultantInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ConsultantInterceptor, multi: true }, SearchConsultantService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
