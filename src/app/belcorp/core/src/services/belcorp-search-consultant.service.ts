@@ -41,6 +41,18 @@ export class SearchConsultantService {
     });
   }
 
+  public checkConsultantUrl(consultantUrl: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'cx-use-client-token': 'true',
+    });
+    return this.http.get(
+      `${this.occEndpointService.getUrl(`/consultant/getByUrl/${this.countrySelector()}/${consultantUrl}`)}`,
+      {
+        headers,
+      }
+    );
+  }
+
   public sendToHome(): Observable<any> {
     const headers = new HttpHeaders({
       'cx-use-client-token': 'true',

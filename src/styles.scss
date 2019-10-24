@@ -36,7 +36,6 @@ $gray-color:#808080 !default;
 
 
 :root {
-
   --cx-color-white: #FFFFFF;
   --cs-color-secundary: #000000;
   --cx-color-success: #409F2D;
@@ -74,20 +73,21 @@ body {
 
 .mat-expansion-indicator {
   display: none;
- }
+}
 
- .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
   background: var(--cx-color-white);
- }
+}
 
- .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-  border-color:var(--cx-color-text);
- }
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--cx-color-text);
+}
 
- .mat-radio-button.mat-accent .mat-radio-inner-circle {
-   background-color: var(--cx-color-text);
- }
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: var(--cx-color-text);
+}
 
- .mat-progress-spinner circle, .mat-spinner circle {
+.mat-progress-spinner circle,
+.mat-spinner circle {
   stroke: #B9007E;
- }
+}
